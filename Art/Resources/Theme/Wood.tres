@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=33 format=3 uid="uid://dn5dm8xuhyyng"]
+[gd_resource type="Theme" load_steps=31 format=3 uid="uid://dn5dm8xuhyyng"]
 
 [ext_resource type="FontFile" uid="uid://m1kdaxvmkci7" path="res://Art/Resources/Theme/Font/HopeGold.ttf" id="1_ckfce"]
 [ext_resource type="Texture2D" uid="uid://dvcmxnj76iqog" path="res://Art/Resources/Theme/Btn/Disabled.png" id="2_bsfj4"]
@@ -6,18 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://cv8xg0xvscscc" path="res://Art/Resources/Theme/Btn/Hover.png" id="4_ds583"]
 [ext_resource type="Texture2D" uid="uid://8nhfjw3gwxo1" path="res://Art/Resources/Theme/Btn/Up.png" id="5_5s03n"]
 [ext_resource type="Texture2D" uid="uid://bpnmtktwrqwlw" path="res://Art/Resources/Theme/CircChecck/UI_Wood_Slot_Selected_02.png" id="6_h1c2h"]
-[ext_resource type="Texture2D" uid="uid://dexmce5e7ksg7" path="res://Art/Resources/Theme/CircChecck/UI_Wood_Slot_Unavailable_02.png" id="7_sgsa2"]
-[ext_resource type="Texture2D" uid="uid://cb4q2a2vjqi5x" path="res://Art/Resources/Theme/CircChecck/UI_Wood_Slot_Available_02.png" id="8_pupiy"]
+[ext_resource type="Texture2D" uid="uid://c27byaudo1fio" path="res://Art/Resources/Theme/CircChecck/UI_Wood_Slot_Available_02.png" id="8_pupiy"]
 [ext_resource type="Texture2D" uid="uid://dexmce5e7ksg7" path="res://Art/Resources/Theme/CircChecck/UI_Wood_Slot_Unavailable_02.png" id="9_l05qm"]
-[ext_resource type="Texture2D" uid="uid://dgb7djd8np4i3" path="res://Art/Resources/Theme/Icons/Cross.png" id="11_cmkxy"]
-[ext_resource type="Texture2D" uid="uid://cgbnkwusvj12m" path="res://Art/Resources/Theme/TextField/Text2.png" id="12_jvu2o"]
+[ext_resource type="Texture2D" uid="uid://boscv8a1mq6do" path="res://Art/Resources/Theme/Icons/Cross.png" id="11_cmkxy"]
+[ext_resource type="Texture2D" uid="uid://ta34o2dsp35q" path="res://Art/Resources/Theme/TextField/Text2.png" id="12_jvu2o"]
 [ext_resource type="Texture2D" uid="uid://cfc4kh8kvytyn" path="res://Art/Resources/Theme/TextField/Text1.png" id="13_n053y"]
 [ext_resource type="StyleBox" uid="uid://cvwafcfactvor" path="res://Art/Resources/Theme/AreaTexture.tres" id="14_f7qrm"]
-[ext_resource type="Texture2D" uid="uid://bjrliglqu0jbn" path="res://Art/Resources/Theme/TextField/ReadOnly.png" id="14_ska4q"]
+[ext_resource type="Texture2D" uid="uid://dgqffbo24evxq" path="res://Art/Resources/Theme/TextField/ReadOnly.png" id="14_ska4q"]
 [ext_resource type="Texture2D" uid="uid://or1r84pbfbmf" path="res://Art/Resources/Theme/UI_Wood_Frame_Standard_02.png" id="15_1itgo"]
 [ext_resource type="Texture2D" uid="uid://bcixa88uuujk6" path="res://Art/Resources/Theme/Icons/UI_Wood_Dropdown_Handle_01.png" id="15_7k1dc"]
-[ext_resource type="Texture2D" uid="uid://dexmce5e7ksg7" path="res://Art/Resources/Theme/CircChecck/UI_Wood_Slot_Unavailable_02.png" id="16_tmr8j"]
-[ext_resource type="Texture2D" uid="uid://bfxaov55j0urm" path="res://Art/Resources/Theme/Slider/UI_Wood_Fillbar_Filler_Green.png" id="17_07r3l"]
+[ext_resource type="Texture2D" uid="uid://dw1w5lf666hkf" path="res://Art/Resources/Theme/Slider/UI_Wood_Fillbar_Filler_Green.png" id="17_07r3l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0equq"]
 texture = ExtResource("2_bsfj4")
@@ -83,7 +81,7 @@ texture_margin_right = 19.0
 texture_margin_bottom = 24.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fshle"]
-texture = ExtResource("16_tmr8j")
+texture = ExtResource("9_l05qm")
 texture_margin_left = 10.0
 texture_margin_top = 7.0
 texture_margin_right = 10.0
@@ -139,7 +137,7 @@ Button/styles/hover = SubResource("StyleBoxTexture_bmaa5")
 Button/styles/normal = SubResource("StyleBoxTexture_1eo5h")
 Button/styles/pressed = SubResource("StyleBoxTexture_1tysy")
 CheckBox/icons/checked = ExtResource("6_h1c2h")
-CheckBox/icons/checked_disabled = ExtResource("7_sgsa2")
+CheckBox/icons/checked_disabled = ExtResource("9_l05qm")
 CheckBox/icons/unchecked = ExtResource("8_pupiy")
 CheckBox/icons/unchecked_disabled = ExtResource("9_l05qm")
 Label/colors/font_color = Color(0.0431373, 0.0705882, 0.0823529, 1)

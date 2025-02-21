@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dw1w5lf666hkf"
-path="res://.godot/imported/UI_Wood_Fillbar_Filler_Green.png-e0729a47955f0275b72af4750bf2419f.ctex"
+path="res://.godot/imported/UI_Wood_Fillbar_Filler_Green.png-fd732fde2f7be44a9f8a6d5e28c83f76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Resources/Link to Theme/Slider/UI_Wood_Fillbar_Filler_Green.png"
-dest_files=["res://.godot/imported/UI_Wood_Fillbar_Filler_Green.png-e0729a47955f0275b72af4750bf2419f.ctex"]
+source_file="res://Art/Resources/Theme/Slider/UI_Wood_Fillbar_Filler_Green.png"
+dest_files=["res://.godot/imported/UI_Wood_Fillbar_Filler_Green.png-fd732fde2f7be44a9f8a6d5e28c83f76.ctex"]
 
 [params]
 
