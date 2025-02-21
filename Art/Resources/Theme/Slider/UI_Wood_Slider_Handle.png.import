@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsh3s5nktuwge"
-path="res://.godot/imported/UI_Wood_Slider_Handle.png-f90c3cb19c5e7a33e10999545bf3a2e8.ctex"
+path="res://.godot/imported/UI_Wood_Slider_Handle.png-3004616e5ffedfaa4549d4472baeb919.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Resources/Link to Theme/Slider/UI_Wood_Slider_Handle.png"
-dest_files=["res://.godot/imported/UI_Wood_Slider_Handle.png-f90c3cb19c5e7a33e10999545bf3a2e8.ctex"]
+source_file="res://Art/Resources/Theme/Slider/UI_Wood_Slider_Handle.png"
+dest_files=["res://.godot/imported/UI_Wood_Slider_Handle.png-3004616e5ffedfaa4549d4472baeb919.ctex"]
 
 [params]
 

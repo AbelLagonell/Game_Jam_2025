@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ta34o2dsp35q"
-path="res://.godot/imported/Text2.png-3067fbf1ac1b2512fa4787e617bf8037.ctex"
+path="res://.godot/imported/Text2.png-2518d5a323b0fc178f3e81efb2048175.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Resources/Link to Theme/TextField/Text2.png"
-dest_files=["res://.godot/imported/Text2.png-3067fbf1ac1b2512fa4787e617bf8037.ctex"]
+source_file="res://Art/Resources/Theme/TextField/Text2.png"
+dest_files=["res://.godot/imported/Text2.png-2518d5a323b0fc178f3e81efb2048175.ctex"]
 
 [params]
 
