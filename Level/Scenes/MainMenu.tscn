@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://byg86ilxm640f"]
 
-[ext_resource type="Script" path="res://Code/Scripts/changeScene.gd" id="1_1sxpg"]
+[ext_resource type="Script" path="res://Code/Scripts/UI/changeScene.gd" id="1_1sxpg"]
 [ext_resource type="PackedScene" uid="uid://dq8yyr255wq73" path="res://Level/Scenes/testing.tscn" id="2_djqvb"]
 [ext_resource type="PackedScene" uid="uid://mwpjuy3ljr0h" path="res://Level/Scenes/Testing 2.tscn" id="3_qrbys"]
 
@@ -9,7 +9,7 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Title" type="Label" parent="CanvasLayer"]
-anchors_preset = -1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_top = 135.0

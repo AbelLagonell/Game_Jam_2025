@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvhkmqh14hk06"]
 
-[ext_resource type="Script" path="res://Code/Scripts/timeTracker.gd" id="1_h3tam"]
+[ext_resource type="Script" path="res://Code/Scripts/UI/timeTracker.gd" id="1_h3tam"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mtrw3"]
 font_size = 50
