@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=31 format=3 uid="uid://dn5dm8xuhyyng"]
+[gd_resource type="Theme" load_steps=32 format=3 uid="uid://dn5dm8xuhyyng"]
 
 [ext_resource type="FontFile" uid="uid://m1kdaxvmkci7" path="res://Art/Resources/Theme/Font/HopeGold.ttf" id="1_ckfce"]
 [ext_resource type="Texture2D" uid="uid://dvcmxnj76iqog" path="res://Art/Resources/Theme/Btn/Disabled.png" id="2_bsfj4"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dgqffbo24evxq" path="res://Art/Resources/Theme/TextField/ReadOnly.png" id="14_ska4q"]
 [ext_resource type="Texture2D" uid="uid://or1r84pbfbmf" path="res://Art/Resources/Theme/UI_Wood_Frame_Standard_02.png" id="15_1itgo"]
 [ext_resource type="Texture2D" uid="uid://bcixa88uuujk6" path="res://Art/Resources/Theme/Icons/UI_Wood_Dropdown_Handle_01.png" id="15_7k1dc"]
+[ext_resource type="Texture2D" uid="uid://duddlg3qjmhnd" path="res://Art/Resources/Theme/Slider/UI_Wood_Fillbar_Hollow_01.png" id="15_ekumr"]
 [ext_resource type="Texture2D" uid="uid://dw1w5lf666hkf" path="res://Art/Resources/Theme/Slider/UI_Wood_Fillbar_Filler_Green.png" id="17_07r3l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0equq"]
@@ -81,7 +82,7 @@ texture_margin_right = 19.0
 texture_margin_bottom = 24.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fshle"]
-texture = ExtResource("9_l05qm")
+texture = ExtResource("15_ekumr")
 texture_margin_left = 10.0
 texture_margin_top = 7.0
 texture_margin_right = 10.0
