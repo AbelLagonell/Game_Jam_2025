@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=32 format=3 uid="uid://dn5dm8xuhyyng"]
+[gd_resource type="Theme" load_steps=31 format=3 uid="uid://dn5dm8xuhyyng"]
 
 [ext_resource type="FontFile" uid="uid://m1kdaxvmkci7" path="res://Art/Resources/Theme/Font/HopeGold.ttf" id="1_ckfce"]
 [ext_resource type="Texture2D" uid="uid://dvcmxnj76iqog" path="res://Art/Resources/Theme/Btn/Disabled.png" id="2_bsfj4"]
@@ -20,13 +20,6 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0equq"]
 texture = ExtResource("2_bsfj4")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wdng4"]
-texture = ExtResource("3_c82yv")
 texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
@@ -132,8 +125,11 @@ Button/colors/icon_hover_color = Color(0.0431373, 0.0705882, 0.0823529, 1)
 Button/colors/icon_hover_pressed_color = Color(0.0431373, 0.0705882, 0.0823529, 1)
 Button/colors/icon_normal_color = Color(0.0431373, 0.0705882, 0.0823529, 1)
 Button/colors/icon_pressed_color = Color(0.0431373, 0.0705882, 0.0823529, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
 Button/styles/disabled = SubResource("StyleBoxTexture_0equq")
-Button/styles/focus = SubResource("StyleBoxTexture_wdng4")
 Button/styles/hover = SubResource("StyleBoxTexture_bmaa5")
 Button/styles/normal = SubResource("StyleBoxTexture_1eo5h")
 Button/styles/pressed = SubResource("StyleBoxTexture_1tysy")
