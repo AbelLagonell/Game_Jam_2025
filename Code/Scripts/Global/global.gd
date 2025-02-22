@@ -3,6 +3,8 @@ extends Node
 #text
 var diaActive: bool = false;
 
+#progession
+var stage = 0; #Go up as timer alters/player progresses through days: 0, 1, 2.
 
 #Stat Tracking
 
@@ -38,3 +40,5 @@ func reset():
 	chickens_inside =0;
 	sheep_inside = 0;
 	current_health = max_health;
+  stage = 0;
+
