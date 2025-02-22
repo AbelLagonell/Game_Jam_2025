@@ -178,6 +178,7 @@ radius = 6.08276
 size = Vector2(20, 24)
 
 [node name="player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_jhmdx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
