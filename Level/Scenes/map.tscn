@@ -342,6 +342,7 @@ layer_3/name = "Foreground"
 layer_3/z_index = 1
 
 [node name="player" parent="." instance=ExtResource("5_kiwte")]
+y_sort_enabled = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("7_nqkvy")]
 position = Vector2(57, 35)
