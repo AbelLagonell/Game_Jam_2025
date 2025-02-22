@@ -1,55 +1,95 @@
-[gd_scene load_steps=2 format=3 uid="uid://byg86ilxm640f"]
+[gd_scene load_steps=4 format=3 uid="uid://byg86ilxm640f"]
 
+[ext_resource type="FontFile" uid="uid://7d48m4vv8tco" path="res://Art/Font/Awe Mono Gold.ttf" id="1_h1srn"]
 [ext_resource type="Script" path="res://Code/Scripts/UI/changeScene.gd" id="1_naecl"]
+[ext_resource type="Script" path="res://Code/Scripts/UI/quit.gd" id="3_w0gic"]
 
-[node name="MainMenu" type="Node2D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Title" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_top = 135.0
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-size_flags_horizontal = 4
-theme_type_variation = &"Title"
-text = "WIP TITLE"
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.35
-anchor_top = 0.25
-anchor_right = 0.65
-anchor_bottom = 0.85
-size_flags_horizontal = 4
+anchor_left = 0.3
+anchor_top = 0.01
+anchor_right = 0.7
+anchor_bottom = 0.2
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="Play" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Title" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_h1srn")
+theme_override_font_sizes/font_size = 124
+text = "WIP TITLE"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_top = -730.0
+offset_right = 255.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Play"
 
-[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer"]
+[node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
-[node name="Settings" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Settings"
+script = ExtResource("1_naecl")
+scene_key = "Settings"
 
-[node name="Control2" type="Control" parent="CanvasLayer/VBoxContainer"]
+[node name="Control2" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
-[node name="Credits" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Credits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Credits"
 script = ExtResource("1_naecl")
 scene_key = "Credits"
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Credits" to="CanvasLayer/VBoxContainer/Credits" method="_on_pressed"]
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032
+anchor_top = 1.0
+anchor_right = 0.253
+anchor_bottom = 1.0
+offset_left = -0.440002
+offset_top = -122.0
+offset_right = -0.76004
+offset_bottom = -20.0
+text = "Quit"
+script = ExtResource("3_w0gic")
+
+[connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="VBoxContainer/Credits" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
