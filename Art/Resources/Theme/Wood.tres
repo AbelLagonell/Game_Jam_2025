@@ -15,17 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://dgqffbo24evxq" path="res://Art/Resources/Theme/TextField/ReadOnly.png" id="14_ska4q"]
 [ext_resource type="Texture2D" uid="uid://or1r84pbfbmf" path="res://Art/Resources/Theme/UI_Wood_Frame_Standard_02.png" id="15_1itgo"]
 [ext_resource type="Texture2D" uid="uid://bcixa88uuujk6" path="res://Art/Resources/Theme/Icons/UI_Wood_Dropdown_Handle_01.png" id="15_7k1dc"]
+[ext_resource type="Texture2D" uid="uid://duddlg3qjmhnd" path="res://Art/Resources/Theme/Slider/UI_Wood_Fillbar_Hollow_01.png" id="15_ekumr"]
 [ext_resource type="Texture2D" uid="uid://dw1w5lf666hkf" path="res://Art/Resources/Theme/Slider/UI_Wood_Fillbar_Filler_Green.png" id="17_07r3l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0equq"]
 texture = ExtResource("2_bsfj4")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 16.0
-texture_margin_bottom = 16.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wdng4"]
-texture = ExtResource("3_c82yv")
 texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
@@ -81,7 +75,7 @@ texture_margin_right = 19.0
 texture_margin_bottom = 24.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fshle"]
-texture = ExtResource("9_l05qm")
+texture = ExtResource("15_ekumr")
 texture_margin_left = 10.0
 texture_margin_top = 7.0
 texture_margin_right = 10.0
@@ -131,8 +125,11 @@ Button/colors/icon_hover_color = Color(0.0431373, 0.0705882, 0.0823529, 1)
 Button/colors/icon_hover_pressed_color = Color(0.0431373, 0.0705882, 0.0823529, 1)
 Button/colors/icon_normal_color = Color(0.0431373, 0.0705882, 0.0823529, 1)
 Button/colors/icon_pressed_color = Color(0.0431373, 0.0705882, 0.0823529, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
 Button/styles/disabled = SubResource("StyleBoxTexture_0equq")
-Button/styles/focus = SubResource("StyleBoxTexture_wdng4")
 Button/styles/hover = SubResource("StyleBoxTexture_bmaa5")
 Button/styles/normal = SubResource("StyleBoxTexture_1eo5h")
 Button/styles/pressed = SubResource("StyleBoxTexture_1tysy")

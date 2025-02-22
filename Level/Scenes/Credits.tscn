@@ -1,0 +1,153 @@
+[gd_scene load_steps=4 format=3 uid="uid://bidd0mr2i47xk"]
+
+[ext_resource type="Texture2D" uid="uid://bkjnbi50eetcc" path="res://Art/Resources/Theme/Spacer.png" id="1_7uov1"]
+[ext_resource type="FontFile" uid="uid://7d48m4vv8tco" path="res://Art/Resources/Theme/Font/Awe Mono Gold.ttf" id="1_nd78a"]
+[ext_resource type="Script" path="res://Code/Scripts/UI/changeScene.gd" id="3_w4mvt"]
+
+[node name="Credits" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -298.0
+offset_right = 342.0
+offset_bottom = 335.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nd78a")
+theme_override_font_sizes/font_size = 48
+text = "All thanks go to:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect3" type="NinePatchRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_7uov1")
+region_rect = Rect2(0, 0, 96, 32)
+patch_margin_left = 16
+patch_margin_top = 12
+patch_margin_right = 16
+patch_margin_bottom = 17
+
+[node name="Game Dev" type="HSplitContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/Game Dev"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nd78a")
+theme_override_font_sizes/font_size = 48
+text = "Game Developers
+"
+
+[node name="People" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/Game Dev"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nd78a")
+theme_override_font_sizes/font_size = 48
+text = "Abel Lagonell
+Samantha Odum
+Nicholas Ciarlone"
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/Game Dev"]
+layout_mode = 2
+
+[node name="TextureRect" type="NinePatchRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_7uov1")
+region_rect = Rect2(0, 0, 96, 32)
+patch_margin_left = 16
+patch_margin_top = 12
+patch_margin_right = 16
+patch_margin_bottom = 17
+
+[node name="UI Elements" type="HSplitContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/UI Elements"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nd78a")
+theme_override_font_sizes/font_size = 48
+text = "UI Art Elements
+"
+horizontal_alignment = 2
+
+[node name="People" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/UI Elements"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nd78a")
+theme_override_font_sizes/font_size = 48
+text = "Crusenho"
+horizontal_alignment = 2
+
+[node name="TextureRect2" type="NinePatchRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_7uov1")
+region_rect = Rect2(0, 0, 96, 32)
+patch_margin_left = 16
+patch_margin_top = 12
+patch_margin_right = 16
+patch_margin_bottom = 17
+
+[node name="Art" type="HSplitContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/Art"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nd78a")
+theme_override_font_sizes/font_size = 48
+text = "Game Art
+"
+horizontal_alignment = 2
+
+[node name="People" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/Art"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nd78a")
+theme_override_font_sizes/font_size = 48
+text = "HelloRumin
+Samantha Odum"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 1.0
+anchor_right = 0.6
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Back"
+vertical_icon_alignment = 0
+script = ExtResource("3_w4mvt")
+scene_key = "Menu"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

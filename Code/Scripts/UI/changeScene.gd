@@ -1,7 +1,6 @@
-@tool
 extends Button
 
-@export var otherScene: PackedScene;
+@export var scene_key: String = "";
 
-func _on_pressed():
-	get_tree().change_scene_to_packed(otherScene);
+func _on_pressed() -> void:
+	SceneManager.switch_scene(scene_key);
