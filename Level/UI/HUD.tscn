@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvhkmqh14hk06"]
+
+[ext_resource type="Script" path="res://Code/Scripts/UI/update_hud.gd" id="1_fnojy"]
+[ext_resource type="Script" path="res://Code/Scripts/UI/timeTracker.gd" id="1_h3tam"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mtrw3"]
+font_size = 50
+outline_size = 10
+outline_color = Color(0.0431373, 0.0705882, 0.0823529, 1)
+
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("healthbar")]
+script = ExtResource("1_fnojy")
+healthbar = NodePath("Health")
+
+[node name="Time" type="Label" parent="."]
+custom_minimum_size = Vector2(120, 40)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 41.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_type_variation = &"HeaderLarge"
+text = "58.21"
+label_settings = SubResource("LabelSettings_mtrw3")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_h3tam")
+timer = 61.0
+
+[node name="Health" type="ProgressBar" parent="."]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 683.0
+offset_bottom = 44.0
+show_percentage = false
