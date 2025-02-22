@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=31 format=3 uid="uid://d3q4queuf407o"]
 
 [ext_resource type="Script" path="res://Code/Scripts/enemy.gd" id="1_rahjh"]
@@ -195,6 +196,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_01pk4"]
+
 radius = 8.06226
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yegf5"]
@@ -212,10 +214,12 @@ animation = &"2_walk"
 frame_progress = 0.326381
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_01pk4")
 
 [node name="detection_area" type="Area2D" parent="."]
+
 position = Vector2(0, -8)
 collision_layer = 2
 collision_mask = 2
