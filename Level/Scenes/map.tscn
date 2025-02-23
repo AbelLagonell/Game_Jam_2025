@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://x7wl355y1sl3" path="res://Level/Prefabs/crops.tscn" id="10_ak6si"]
 [ext_resource type="Script" path="res://Code/Scripts/penBehavior.gd" id="13_glclq"]
 [ext_resource type="PackedScene" uid="uid://cvhkmqh14hk06" path="res://Level/UI/HUD.tscn" id="14_aaj17"]
-[ext_resource type="PackedScene" path="res://Level/UI/PauseMenu.tscn" id="16_33k3u"]
+[ext_resource type="PackedScene" uid="uid://dxndmkil8bljk" path="res://Level/UI/PauseMenu.tscn" id="16_33k3u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4c7v"]
 texture = ExtResource("1_f0ubg")
@@ -457,20 +457,6 @@ type = 1
 position = Vector2(-153, -74)
 type = 1
 stage = 1
-
-[node name="Sheep1#sheep" parent="." instance=ExtResource("7_nqkvy")]
-position = Vector2(3, 167)
-
-[node name="Chicken1" type="Marker2D" parent="."]
-position = Vector2(-217, 146)
-
-[node name="chicken" parent="Chicken1" instance=ExtResource("9_srsdr")]
-
-[node name="Cow1" type="Marker2D" parent="."]
-position = Vector2(158, -100)
-
-[node name="cow" parent="Cow1" instance=ExtResource("8_yekpe")]
-position = Vector2(-66, 218)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

@@ -12,7 +12,7 @@ var crop3 = preload("res://Level/Prefabs/crops/crop3.tscn")
 var player_alive = true
 var attack_ip = false
 
-var health = 100
+var health = 10
 var atk = 10
 
 var damage_taken = 0
@@ -34,27 +34,22 @@ func player_movement(delta):
 	if Input.is_action_pressed("ui_right"):
 		current_dir = "right"
 		play_anim(1)
-		velocity.x = speed
-		velocity.y = 0
 	elif Input.is_action_pressed("ui_left"):
 		current_dir = "left"
 		play_anim(1)
-		velocity.x = -speed
-		velocity.y = 0
 	elif Input.is_action_pressed("ui_down"):
 		current_dir = "down"
 		play_anim(1)
-		velocity.x = 0
-		velocity.y = speed
 	elif Input.is_action_pressed("ui_up"):
 		current_dir = "up"
 		play_anim(1)
-		velocity.x = 0
-		velocity.y = -speed
 	else:
 		play_anim(0)
 		velocity.x = 0
 		velocity.y = 0
+	
+	var input = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down");
+	velocity = input * speed;
 	
 	move_and_slide()
 	
