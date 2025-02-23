@@ -37,7 +37,7 @@ func check_type():
 		type = 3
 
 func _on_interact():
-	if(stage == 3 && !global.has_crop):
+	if(stage >= 3 && !global.has_crop):
 		global.has_crop = true
 		print("Got crop type " + str(type))
 		global.give_crop(type)
