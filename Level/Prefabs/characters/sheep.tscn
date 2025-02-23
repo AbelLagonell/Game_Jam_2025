@@ -237,7 +237,7 @@ shape = SubResource("CircleShape2D_1st3q")
 wait_time = 0.5
 
 [node name="wander_timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 autostart = true
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]

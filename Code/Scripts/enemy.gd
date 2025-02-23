@@ -1,14 +1,15 @@
 extends CharacterBody2D
 
 #Sync
+var rng = RandomNumberGenerator.new()
 var player_chase = false
 var player = null
 var enemy_in_attack_zone = false
 var can_take_damage = true
 var damage_taken = 0
 var is_being_held = false
-var start_position = global_position
-var target_position = global_position
+var start_position = Vector2(10, 10)
+var target_position = Vector2(10, 10)
 var walk = false;
 
 #Individual values
@@ -17,15 +18,17 @@ var atk = 5
 var speed = 50
 var stage = 0
 
-func start():
-	start_position = global_position
-	target_position = global_position
+func _ready():
+	#start_position = Vector2(10, 10)
+	#target_position = Vector2(global_position.x, global_position.y)
+	updateTargetPos()
+	print(global_position.x, global_position.y)
 
 func _physics_process(delta):
 	updateForm()
-	animate()
 	
 	if(!is_being_held):
+		animate()
 		if(stage == 2):
 			#damage()
 			if player_chase:
@@ -60,7 +63,8 @@ func damage():
 				self.queue_free()
 
 func updateTargetPos():
-	var targetVec = Vector2(randf_range(-32,32),randf_range(-32,32))
+	rng.randomize()
+	var targetVec = Vector2(rng.randf_range(-32,32), rng.randf_range(-32,32))
 	target_position = start_position + targetVec
 
 func animate():
@@ -98,7 +102,6 @@ func _on_damage_cooldown_timeout():
 
 func _on_detection_area_body_entered(body):
 	if body.has_method("player"):
-		print("PlayerFOund")
 		player = body
 		player_chase = true
 
