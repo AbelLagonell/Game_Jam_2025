@@ -1,22 +1,11 @@
 extends Label
 
 ## Total Seconds
-@export var timer: float = 60.00;
-
-## Says if it already triggered \n [10, 60]
-var secondsLeft: Array[bool] = [false, false];
-signal ten_seconds_left;
-signal sixty_seconds_left;
+var timer: float = 0.00;
 
 
 func _process(delta: float) -> void:
-	timer -= delta;
-	if (timer < 10 and not secondsLeft[0]):
-		ten_seconds_left.emit();
-		secondsLeft[0] = true;
-	else: if (timer < 60 and not secondsLeft[1]):
-		sixty_seconds_left.emit();
-		secondsLeft[1] = true;
+	timer += delta;
 	formatTime();
 
 
