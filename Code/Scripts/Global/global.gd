@@ -40,5 +40,5 @@ func reset():
 	chickens_inside =0;
 	sheep_inside = 0;
 	current_health = max_health;
-  stage = 0;
+	stage = 0;
 
