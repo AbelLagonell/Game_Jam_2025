@@ -12,6 +12,7 @@ var is_being_held = false
 var start_position = global_position
 var target_position = global_position
 var walk = false;
+var stage_count = 0
 @onready var interaction_area: InteractionArea = $InteractionArea
 @export var startX: int = 0
 @export var startY: int = 0
@@ -22,7 +23,7 @@ var walk = false;
 #Individual values
 var health = 50
 var atk = 5
-var speed = 20
+var speed = 10
 var stage = 0
 
 func _ready():
@@ -38,7 +39,7 @@ func _physics_process(delta):
 		if(stage == 2):
 			#damage()
 			if player_chase:
-				position += (player.position - position)/speed
+				position += (player.position - position)/speed*20
 				
 				$AnimatedSprite2D.play("2_walk")
 				if(player.position.x - position.x) < 0:
@@ -58,8 +59,21 @@ func _physics_process(delta):
 		animate()
 
 func updateForm():
-	if(stage != global.stage):
-		stage = global.stage
+	if(stage_count != global.stage): #if the stage count changes, add 1
+		stage_count = global.stage 
+		stage = stage + 1
+		if(stage == 0):
+			pass #Sound effect of transforming into base form.
+		if(stage == 1):
+			pass #sound effect of transforming into 2nd form.
+		if(stage == 2):
+			pass #sound effect of transforming fully.
+	
+	#Check to make sure stage hasn't gone over/under
+	if(stage > 3):
+		stage = 3
+	if(stage < 0):
+		stage = 0
 
 func enemy():
 	pass
@@ -106,8 +120,13 @@ func wander():
 		else:
 			$AnimatedSprite2D.flip_h = false
 
+func pursue(goalX, goalY):
+	target_position = Vector2(goalX, goalY)
+
 func _on_interact():
-	print("Interacted With")
+	if global.has_crop == true:
+		stage = stage - 1
+		global.has_crop = false
 
 func _on_wander_timer_timeout():
 	updateTargetPos()
@@ -126,11 +145,12 @@ func _on_detection_area_body_exited(body):
 		player_chase = false
 
 func _on_enemy_hitbox_body_entered(body):
-	if body.has_method("cow"):
+	if body.enemyType != self.enemyType:
 		enemy_in_attack_zone = true
+		pursue(body.position.x, body.position.y)
 
 func _on_enemy_hitbox_body_exited(body):
-	if body.has_method("cow"):
+	if body.enemyType != self.enemyType:
 		enemy_in_attack_zone = false
 
 func _on_button_button_down():

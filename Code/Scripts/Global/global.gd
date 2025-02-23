@@ -5,6 +5,7 @@ var diaActive: bool = false;
 
 #progession
 var stage :int = 0; #Go up as timer alters/player progresses through days: 0, 1, 2.
+var has_crop: bool = false;
 
 #Stat Tracking
 var _total_score: int 	= 0;
