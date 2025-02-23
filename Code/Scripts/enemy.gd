@@ -16,7 +16,6 @@ var stage_count = 0
 @onready var interaction_area: InteractionArea = $InteractionArea
 @export var startX: int = 0
 @export var startY: int = 0
-
 @export_enum("Cow","Sheep", "Chicken") var enemyType : String = "";
 
 
@@ -63,11 +62,11 @@ func updateForm():
 		stage_count = global.stage 
 		stage = stage + 1
 		if(stage == 0):
-			pass #Sound effect of transforming into base form.
+			$"../TransformSFX".play()
 		if(stage == 1):
-			pass #sound effect of transforming into 2nd form.
+			$"../TransformSFX".play()
 		if(stage == 2):
-			pass #sound effect of transforming fully.
+			$"../TransformSFX".play()
 	
 	#Check to make sure stage hasn't gone over/under
 	if(stage > 3):
@@ -117,6 +116,12 @@ func wander():
 		walk = true;
 		if(target_position - position) < Vector2(0,0):
 			$AnimatedSprite2D.flip_h = true
+			if(enemyType == "Cow"):
+				$"../CowSFX".play()
+			if(enemyType == "Chicken"):
+				$"../ChickenSFX".play()
+			if(enemyType == "Sheep"):
+				$"../SheepSFX".play()
 		else:
 			$AnimatedSprite2D.flip_h = false
 
