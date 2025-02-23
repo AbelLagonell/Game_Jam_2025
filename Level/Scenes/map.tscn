@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cfr1jkqsy3i82"]
+[gd_scene load_steps=18 format=3 uid="uid://cfr1jkqsy3i82"]
 
 [ext_resource type="Texture2D" uid="uid://xp4m7rsrcdoc" path="res://assets/tileset/PixelFarm_Tileset.png" id="1_f0ubg"]
 [ext_resource type="Texture2D" uid="uid://b4nc3t1cveapm" path="res://assets/tileset/PixelFarm_Item.png" id="2_50b36"]
@@ -9,8 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://checejc8mhdfh" path="res://assets/crops/PixelFarm_Crops.png" id="6_vgnay"]
 [ext_resource type="Texture2D" uid="uid://bovk3efknfx4e" path="res://assets/tileset/dirt.png" id="7_f5pad"]
 [ext_resource type="PackedScene" uid="uid://d3q4queuf407o" path="res://Level/Prefabs/characters/sheep.tscn" id="7_nqkvy"]
-[ext_resource type="PackedScene" uid="uid://cxjnedm6wwx7w" path="res://Level/Prefabs/characters/cow.tscn" id="8_yekpe"]
-[ext_resource type="PackedScene" uid="uid://cip6j8li4x4g2" path="res://Level/Prefabs/characters/chicken.tscn" id="9_srsdr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4c7v"]
 texture = ExtResource("1_f0ubg")
@@ -419,24 +417,14 @@ layer_5/name = "Layer5"
 
 [node name="player" parent="." instance=ExtResource("5_kiwte")]
 
-[node name="Sheep1" type="Marker2D" parent="."]
-position = Vector2(-110, 113)
-
-[node name="sheep" parent="Sheep1" instance=ExtResource("7_nqkvy")]
-
-[node name="Chicken1" type="Marker2D" parent="."]
-position = Vector2(-217, 146)
-
-[node name="chicken" parent="Chicken1" instance=ExtResource("9_srsdr")]
-
-[node name="Cow1" type="Marker2D" parent="."]
-position = Vector2(34, 114)
-
-[node name="cow" parent="Cow1" instance=ExtResource("8_yekpe")]
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-19.778, 0)
 scale = Vector2(0.957237, 1)
 polygon = PackedVector2Array(564.936, -193, 575.383, 385, -446.308, 385, -456.754, -380, 583.741, -388, 561.802, -219, 447.933, -117, 429.129, -116, 431.218, -278, -343.93, -279, -339.751, 282, 436.442, 281, 429.129, -110, 471.96, -110)
+
+[node name="sheep" parent="." instance=ExtResource("7_nqkvy")]
+position = Vector2(100, 100)
+startX = 100
+startY = 100

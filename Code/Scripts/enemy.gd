@@ -13,14 +13,17 @@ var start_position = global_position
 var target_position = global_position
 var walk = false;
 @onready var interaction_area: InteractionArea = $InteractionArea
+@export var startX: int = 0
+@export var startY: int = 0
 
 #Individual values
 var health = 50
 var atk = 5
-var speed = 50
+var speed = 20
 var stage = 0
 
 func _ready():
+	position = Vector2(startX, startY)
 	updateTargetPos()
 	interaction_area.interact = Callable(self, "_on_interact")
 
@@ -43,6 +46,13 @@ func _physics_process(delta):
 				wander()
 		else:
 			wander()
+	else:
+		position = get_global_mouse_position()
+		startX = get_global_mouse_position().x
+		startY = get_global_mouse_position().y
+		target_position = Vector2(startX, startY)
+		walk = false
+		animate()
 
 func updateForm():
 	if(stage != global.stage):
@@ -65,7 +75,7 @@ func damage():
 func updateTargetPos():
 	rng.randomize()
 	var targetVec = Vector2(rng.randf_range(-32,32), rng.randf_range(-32,32))
-	target_position = start_position + targetVec
+	target_position = Vector2(startX, startY) + targetVec
 
 func animate():
 	if(walk):
@@ -120,3 +130,11 @@ func _on_enemy_hitbox_body_entered(body):
 func _on_enemy_hitbox_body_exited(body):
 	if body.has_method("cow"):
 		enemy_in_attack_zone = false
+
+func _on_button_button_down():
+	is_being_held = true;
+	collision_layer = 4;
+
+func _on_button_button_up():
+	is_being_held = false;
+	collision_layer = 1;
