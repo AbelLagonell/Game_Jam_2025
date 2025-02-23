@@ -47,5 +47,6 @@ text = "Quit"
 script = ExtResource("2_djxvx")
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Main Menu" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Main Menu" to="PanelContainer/VBoxContainer/Main Menu" method="_on_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="PanelContainer/VBoxContainer/Quit" method="_on_pressed"]
