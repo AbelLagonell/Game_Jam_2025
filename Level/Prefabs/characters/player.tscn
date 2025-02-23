@@ -1,7 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2jy0c37agr6q"]
+[gd_scene load_steps=25 format=3 uid="uid://b2jy0c37agr6q"]
 
 [ext_resource type="Texture2D" uid="uid://5l4vqjcpv44c" path="res://assets/characters/player/PixelFarm_Farmer-Sheet.png" id="1_5nftr"]
 [ext_resource type="Script" path="res://Code/Scripts/player.gd" id="1_jhmdx"]
+[ext_resource type="Texture2D" uid="uid://ctg14sgpm7j76" path="res://assets/overlay/overlayDay.png" id="3_aoetc"]
+[ext_resource type="Texture2D" uid="uid://dwhs4eoy2dn0l" path="res://assets/overlay/overlayDusk.png" id="4_4obd5"]
+[ext_resource type="Texture2D" uid="uid://dlf2iqw2u052t" path="res://assets/overlay/empty.png" id="5_7fnos"]
+[ext_resource type="Texture2D" uid="uid://bg13a6n3k5i5k" path="res://assets/overlay/overlayNight.png" id="6_pdgm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ntd47"]
 atlas = ExtResource("1_5nftr")
@@ -174,6 +178,57 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_3fv2t"]
 radius = 6.08276
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhjmb"]
+atlas = ExtResource("3_aoetc")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yev5"]
+atlas = ExtResource("4_4obd5")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxjb2"]
+atlas = ExtResource("5_7fnos")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vag7"]
+atlas = ExtResource("6_pdgm5")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7i0r2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhjmb")
+}],
+"loop": true,
+"name": &"day",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yev5")
+}],
+"loop": true,
+"name": &"dusk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxjb2")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vag7")
+}],
+"loop": true,
+"name": &"night",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsfsk"]
 size = Vector2(20, 24)
 
@@ -195,6 +250,11 @@ shape = SubResource("CircleShape2D_3fv2t")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 10)
 zoom = Vector2(4, 4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D"]
+z_index = 100
+sprite_frames = SubResource("SpriteFrames_7i0r2")
+animation = &"night"
 
 [node name="Direction" type="Marker2D" parent="."]
 
