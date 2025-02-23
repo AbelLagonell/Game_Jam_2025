@@ -252,6 +252,7 @@ position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_bjwbw")
 
 [node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -12.0
 offset_top = -14.0
 offset_right = 12.0

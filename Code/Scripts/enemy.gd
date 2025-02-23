@@ -57,7 +57,6 @@ func _physics_process(delta):
 func updateForm():
 	if(stage != global.stage):
 		stage = global.stage
-		pass
 
 func enemy():
 	pass
