@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=26 format=3 uid="uid://cfr1jkqsy3i82"]
 
 
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dhosaskv465vq" path="res://assets/tileset/imprtileset.png" id="5_288mo"]
 [ext_resource type="PackedScene" uid="uid://b2jy0c37agr6q" path="res://Level/Prefabs/characters/player.tscn" id="5_kiwte"]
 [ext_resource type="Texture2D" uid="uid://checejc8mhdfh" path="res://assets/crops/PixelFarm_Crops.png" id="6_vgnay"]
+
 [ext_resource type="Texture2D" uid="uid://bovk3efknfx4e" path="res://assets/tileset/dirt.png" id="7_f5pad"]
 [ext_resource type="PackedScene" uid="uid://d3q4queuf407o" path="res://Level/Prefabs/characters/sheep.tscn" id="7_nqkvy"]
 [ext_resource type="PackedScene" uid="uid://cxjnedm6wwx7w" path="res://Level/Prefabs/characters/cow.tscn" id="8_yekpe"]
@@ -17,6 +19,7 @@
 [ext_resource type="Script" path="res://Code/Scripts/penBehavior.gd" id="13_glclq"]
 [ext_resource type="PackedScene" uid="uid://cvhkmqh14hk06" path="res://Level/UI/HUD.tscn" id="14_aaj17"]
 [ext_resource type="PackedScene" uid="uid://dxndmkil8bljk" path="res://Level/UI/PauseMenu.tscn" id="16_33k3u"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4c7v"]
 texture = ExtResource("1_f0ubg")
