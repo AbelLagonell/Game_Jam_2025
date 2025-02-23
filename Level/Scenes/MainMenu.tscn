@@ -2,6 +2,10 @@
 
 [ext_resource type="FontFile" uid="uid://7d48m4vv8tco" path="res://Art/Font/Awe Mono Gold.ttf" id="1_h1srn"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+[ext_resource type="PackedScene" path="res://Level/UI/Background.tscn" id="1_jhqbw"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="PackedScene" path="res://Level/UI/Background.tscn" id="1_jhqbw"]
 >>>>>>> Stashed changes

@@ -328,11 +328,14 @@ sources/4 = SubResource("TileSetAtlasSource_65lea")
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 [node name="player" parent="." instance=ExtResource("5_kiwte")]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("7_nqkvy")]
 position = Vector2(57, 35)
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
