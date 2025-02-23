@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cfr1jkqsy3i82"]
+[gd_scene load_steps=26 format=3 uid="uid://cfr1jkqsy3i82"]
 
 [ext_resource type="Texture2D" uid="uid://xp4m7rsrcdoc" path="res://assets/tileset/PixelFarm_Tileset.png" id="1_f0ubg"]
 [ext_resource type="Texture2D" uid="uid://b4nc3t1cveapm" path="res://assets/tileset/PixelFarm_Item.png" id="2_50b36"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://x7wl355y1sl3" path="res://Level/Prefabs/crops.tscn" id="10_ak6si"]
 [ext_resource type="Script" path="res://Code/Scripts/penBehavior.gd" id="13_glclq"]
 [ext_resource type="PackedScene" uid="uid://cvhkmqh14hk06" path="res://Level/UI/HUD.tscn" id="14_aaj17"]
+[ext_resource type="PackedScene" uid="uid://dxndmkil8bljk" path="res://Level/UI/PauseMenu.tscn" id="16_33k3u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4c7v"]
 texture = ExtResource("1_f0ubg")
@@ -538,6 +539,10 @@ duration = 5
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.245738, 0.30706, 0.395977, 1)
+
+[node name="PauseMenu" parent="." instance=ExtResource("16_33k3u")]
+process_mode = 2
+visible = false
 
 [connection signal="body_shape_entered" from="PenCollision" to="PenCollision" method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="PenCollision" to="PenCollision" method="_on_body_shape_exited"]
