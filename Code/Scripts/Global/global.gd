@@ -13,6 +13,8 @@ var sheep_inside: int 	= 0;
 var cow_inside: int 	= 0;
 var current_health: int	= 10;
 var max_health: int 	= 10;
+var timeout := false;
+
 
 signal score_change(score: int);
 signal health_change(health:int);
@@ -20,11 +22,17 @@ signal max_health_change(health:int);
 signal cow_change(score:int);
 signal chicken_change(score:int);
 signal sheep_change(score:int);
+signal game_end();
 
 
 func _ready() -> void:
 	max_health_change.emit(max_health);
 	reset();
+
+func stop_game():
+	get_tree().paused=true
+	game_end.emit();
+	
 
 func get_score()->int:
 	var count := 0;
