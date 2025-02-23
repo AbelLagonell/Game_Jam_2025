@@ -291,6 +291,7 @@ texture = ExtResource("5_288mo")
 15:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:12/size_in_atlas = Vector2i(3, 3)
 15:12/0 = 0
+15:12/0/y_sort_origin = 15
 15:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-21.25, 4, 19.75, 4.25, 17, 23.5, -17.75, 23.5)
 16:9/size_in_atlas = Vector2i(2, 3)
 16:9/0 = 0
@@ -325,6 +326,7 @@ sources/3 = SubResource("TileSetAtlasSource_6whr8")
 sources/4 = SubResource("TileSetAtlasSource_65lea")
 
 [node name="Node2D" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -343,5 +345,5 @@ layer_3/z_index = 1
 
 [node name="player" parent="." instance=ExtResource("5_kiwte")]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("7_nqkvy")]
+[node name="sheep" parent="." instance=ExtResource("7_nqkvy")]
 position = Vector2(57, 35)
