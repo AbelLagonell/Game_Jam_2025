@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://byg86ilxm640f"]
+[gd_scene load_steps=5 format=3 uid="uid://bdqhnmktckmxl"]
 
 [ext_resource type="FontFile" uid="uid://7d48m4vv8tco" path="res://Art/Font/Awe Mono Gold.ttf" id="1_h1srn"]
 [ext_resource type="PackedScene" uid="uid://b6pae8ci02d41" path="res://Level/UI/Background.tscn" id="1_jhqbw"]
@@ -54,6 +54,8 @@ size_flags_horizontal = 4
 layout_mode = 2
 size_flags_vertical = 3
 text = "Play"
+script = ExtResource("1_naecl")
+scene_key = "Game"
 
 [node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2
@@ -93,6 +95,7 @@ offset_bottom = -20.0
 text = "Quit"
 script = ExtResource("3_w0gic")
 
+[connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer/Play" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="VBoxContainer/Credits" method="_on_pressed"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

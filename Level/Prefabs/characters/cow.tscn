@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://cxjnedm6wwx7w"]
+[gd_scene load_steps=28 format=3 uid="uid://cxjnedm6wwx7w"]
 
 [ext_resource type="Script" path="res://Code/Scripts/enemy.gd" id="1_njk6n"]
 [ext_resource type="Texture2D" uid="uid://bmugi2rj7vf4m" path="res://assets/characters/cow/PixelFarm_Cow-Sheet.png" id="1_wtr5h"]
 [ext_resource type="Texture2D" uid="uid://de85ukthwrdgh" path="res://assets/characters/cow/Cow.png" id="2_ew7ox"]
 [ext_resource type="Texture2D" uid="uid://cc8juvhexd60s" path="res://assets/characters/cow/CowAtk.png" id="3_enb41"]
+[ext_resource type="PackedScene" uid="uid://cuqjd2nuvdw2i" path="res://Level/Scenes/InteractionArea.tscn" id="5_prm0h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13sfi"]
 atlas = ExtResource("1_wtr5h")
@@ -174,14 +175,19 @@ radius = 46.8188
 [sub_resource type="CircleShape2D" id="CircleShape2D_gbf88"]
 radius = 12.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_eq3ag"]
+radius = 27.0185
+
 [node name="cow" type="CharacterBody2D"]
 z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_njk6n")
+enemyType = "Cow"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_ng8lm")
-animation = &"0_idle"
+animation = &"1_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
@@ -211,9 +217,24 @@ wait_time = 0.5
 wait_time = 10.0
 autostart = true
 
+[node name="InteractionArea" parent="." instance=ExtResource("5_prm0h")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_eq3ag")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -12.0
+offset_top = -13.0
+offset_right = 12.0
+offset_bottom = 11.0
+
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [connection signal="timeout" from="damage_cooldown" to="." method="_on_damage_cooldown_timeout"]
 [connection signal="timeout" from="wander_timer" to="." method="_on_wander_timer_timeout"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

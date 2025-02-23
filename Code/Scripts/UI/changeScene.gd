@@ -4,5 +4,5 @@ extends Button
 
 func _on_pressed() -> void:
 	SceneManager.switch_scene(scene_key);
-	if (scene_key == "Menu"):
+	if (scene_key == "Game"):
 		global.reset();
