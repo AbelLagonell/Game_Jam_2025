@@ -1,14 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://byg86ilxm640f"]
+[gd_scene load_steps=5 format=3 uid="uid://byg86ilxm640f"]
 
 [ext_resource type="FontFile" uid="uid://7d48m4vv8tco" path="res://Art/Font/Awe Mono Gold.ttf" id="1_h1srn"]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-[ext_resource type="PackedScene" path="res://Level/UI/Background.tscn" id="1_jhqbw"]
->>>>>>> Stashed changes
-=======
-[ext_resource type="PackedScene" path="res://Level/UI/Background.tscn" id="1_jhqbw"]
->>>>>>> Stashed changes
+[ext_resource type="PackedScene" uid="uid://b6pae8ci02d41" path="res://Level/UI/Background.tscn" id="1_jhqbw"]
 [ext_resource type="Script" path="res://Code/Scripts/UI/changeScene.gd" id="1_naecl"]
 [ext_resource type="Script" path="res://Code/Scripts/UI/quit.gd" id="3_w0gic"]
 
@@ -19,6 +12,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" parent="." instance=ExtResource("1_jhqbw")]
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
