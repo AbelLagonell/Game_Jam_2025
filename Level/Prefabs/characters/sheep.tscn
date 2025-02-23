@@ -1,10 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://d3q4queuf407o"]
+[gd_scene load_steps=33 format=3 uid="uid://d3q4queuf407o"]
 
 [ext_resource type="Script" path="res://Code/Scripts/enemy.gd" id="1_rahjh"]
 [ext_resource type="Texture2D" uid="uid://cdv7iu8wvy6v8" path="res://assets/characters/sheep/Sheep.png" id="1_yu6s0"]
 [ext_resource type="Texture2D" uid="uid://c52yy28m8cwmd" path="res://assets/characters/sheep/Sheep2.png" id="2_5v4vs"]
 [ext_resource type="Texture2D" uid="uid://difyk066lm3t1" path="res://assets/characters/sheep/SheepATK.png" id="3_g8vay"]
 [ext_resource type="Texture2D" uid="uid://sd15cfag83gj" path="res://assets/characters/sheep/Sheep3.png" id="3_skc18"]
+[ext_resource type="PackedScene" uid="uid://cf650yyi7ufme" path="res://Level/Scenes/InteractionArea.tscn" id="6_5mmw0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvgw5"]
 atlas = ExtResource("1_yu6s0")
@@ -203,6 +204,9 @@ radius = 46.8188
 [sub_resource type="CircleShape2D" id="CircleShape2D_1st3q"]
 radius = 12.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bjwbw"]
+radius = 23.0217
+
 [node name="sheep" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
@@ -241,9 +245,25 @@ wait_time = 0.5
 wait_time = 10.0
 autostart = true
 
+[node name="InteractionArea" parent="." instance=ExtResource("6_5mmw0")]
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_bjwbw")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -12.0
+offset_top = -14.0
+offset_right = 12.0
+offset_bottom = 10.0
+
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [connection signal="timeout" from="damage_cooldown" to="." method="_on_damage_cooldown_timeout"]
 [connection signal="timeout" from="wander_timer" to="." method="_on_wander_timer_timeout"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

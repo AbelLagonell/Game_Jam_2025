@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://bovk3efknfx4e"
-
-path="res://.godot/imported/dirt.png-a6ffe435787fdd294b3e95d3a279f7b5.ctex"
+uid="uid://c2bbskn3y380p"
+path="res://.godot/imported/3.png-5f56d7faf6bbaa1f64bbcd92829b91d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/dirt.png"
-dest_files=["res://.godot/imported/dirt.png-a6ffe435787fdd294b3e95d3a279f7b5.ctex"]
+source_file="res://assets/crops/3.png"
+dest_files=["res://.godot/imported/3.png-5f56d7faf6bbaa1f64bbcd92829b91d9.ctex"]
 
 [params]
 

@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://bovk3efknfx4e"
-
-path="res://.godot/imported/dirt.png-a6ffe435787fdd294b3e95d3a279f7b5.ctex"
+uid="uid://bg13a6n3k5i5k"
+path="res://.godot/imported/overlayNight.png-f52ba5cbc1822faee5e6f0b982d9750b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/dirt.png"
-dest_files=["res://.godot/imported/dirt.png-a6ffe435787fdd294b3e95d3a279f7b5.ctex"]
+source_file="res://assets/overlay/overlayNight.png"
+dest_files=["res://.godot/imported/overlayNight.png-f52ba5cbc1822faee5e6f0b982d9750b.ctex"]
 
 [params]
 
