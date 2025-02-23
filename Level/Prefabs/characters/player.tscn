@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2jy0c37agr6q"]
+[gd_scene load_steps=17 format=3 uid="uid://b2jy0c37agr6q"]
 
 [ext_resource type="Texture2D" uid="uid://5l4vqjcpv44c" path="res://assets/characters/player/PixelFarm_Farmer-Sheet.png" id="1_5nftr"]
 [ext_resource type="Script" path="res://Code/Scripts/player.gd" id="1_jhmdx"]
@@ -177,6 +177,9 @@ radius = 6.08276
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsfsk"]
 size = Vector2(20, 24)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_appr5"]
+radius = 8.0
+
 [node name="player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
@@ -202,3 +205,11 @@ zoom = Vector2(4, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
 shape = SubResource("RectangleShape2D_gsfsk")
+
+[node name="player_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+shape = SubResource("CircleShape2D_appr5")
+
+[connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]

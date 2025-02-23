@@ -3,6 +3,10 @@ extends CharacterBody2D
 var enemyType = "None"
 const speed = 200
 var current_dir = "none"
+var crop0 = preload("res://Level/Prefabs/crops/crop0.tscn")
+var crop1 = preload("res://Level/Prefabs/crops/crop1.tscn")
+var crop2 = preload("res://Level/Prefabs/crops/crop2.tscn")
+var crop3 = preload("res://Level/Prefabs/crops/crop3.tscn")
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
 var player_alive = true
@@ -20,6 +24,7 @@ func _physics_process(delta):
 	if !global.diaActive:
 		player_movement(delta)
 		pausing()
+		addCrop()
 		
 func pausing():
 	if Input.is_action_just_pressed("Pause"):
@@ -89,5 +94,28 @@ func play_anim(movement):
 			if attack_ip == false:
 				anim.play("backIdle")
 
+func addCrop():
+	var instance = crop0.instantiate()
+	if(global.has_crop):
+		if(global.crop_type == 0):
+			instance = crop0.instantiate()
+			add_child(instance)
+		if(global.crop_type == 1):
+			instance = crop1.instantiate()
+			add_child(instance)
+		if(global.crop_type == 2):
+			instance = crop2.instantiate()
+			add_child(instance)
+		if(global.crop_type == 3):
+			instance = crop3.instantiate()
+			add_child(instance)
+
 func player():
 	pass
+
+func _on_player_hitbox_body_entered(body: Node2D):
+	if body.has_method("enemy"):
+		damage_taken = body.atk
+
+func _on_player_hitbox_body_exited(body: Node2D):
+	pass # Replace with function body.

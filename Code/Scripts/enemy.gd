@@ -22,7 +22,7 @@ var stage_count = 0
 
 #Individual values
 var health = 50
-var atk = 5
+var atk = 1
 var speed = 10
 var stage = 0
 
@@ -39,9 +39,9 @@ func _physics_process(delta):
 		if(stage == 2):
 			#damage()
 			if player_chase:
-				position += (player.position - position)/speed*20
+				position += (player.position - position)/speed
 				
-				$AnimatedSprite2D.play("2_walk")
+				$AnimatedSprite2D.play("2_atk")
 				if(player.position.x - position.x) < 0:
 					$AnimatedSprite2D.flip_h = true
 				else:
@@ -126,6 +126,7 @@ func pursue(goalX, goalY):
 func _on_interact():
 	if global.has_crop == true:
 		stage = stage - 1
+		global.crop_type = 0
 		global.has_crop = false
 
 func _on_wander_timer_timeout():
@@ -148,6 +149,8 @@ func _on_enemy_hitbox_body_entered(body):
 	if body.enemyType != self.enemyType:
 		enemy_in_attack_zone = true
 		pursue(body.position.x, body.position.y)
+		if(stage == 2):
+			$AnimatedSprite2D.play("2_atk")
 
 func _on_enemy_hitbox_body_exited(body):
 	if body.enemyType != self.enemyType:
