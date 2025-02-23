@@ -4,7 +4,7 @@ class_name enemy
 #Sync
 var rng = RandomNumberGenerator.new()
 var player_chase = false
-var player = null
+var player : Node2D = null
 var enemy_in_attack_zone = false
 var can_take_damage = true
 var damage_taken = 0
@@ -15,6 +15,9 @@ var walk = false;
 @onready var interaction_area: InteractionArea = $InteractionArea
 @export var startX: int = 0
 @export var startY: int = 0
+
+@export_enum("Cow","Sheep", "Chicken") var enemyType : String = "";
+
 
 #Individual values
 var health = 50

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c52yy28m8cwmd" path="res://assets/characters/sheep/Sheep2.png" id="2_5v4vs"]
 [ext_resource type="Texture2D" uid="uid://difyk066lm3t1" path="res://assets/characters/sheep/SheepATK.png" id="3_g8vay"]
 [ext_resource type="Texture2D" uid="uid://sd15cfag83gj" path="res://assets/characters/sheep/Sheep3.png" id="3_skc18"]
-[ext_resource type="PackedScene" uid="uid://cf650yyi7ufme" path="res://Level/Scenes/InteractionArea.tscn" id="6_5mmw0"]
+[ext_resource type="PackedScene" uid="uid://cuqjd2nuvdw2i" path="res://Level/Scenes/InteractionArea.tscn" id="6_5mmw0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvgw5"]
 atlas = ExtResource("1_yu6s0")
@@ -211,8 +211,10 @@ radius = 23.0217
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_rahjh")
+enemyType = "Sheep"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_f2mt7")
 animation = &"0_idle"
 

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Code/Scripts/enemy.gd" id="1_tocvl"]
 [ext_resource type="Texture2D" uid="uid://wjhsh71c16nb" path="res://assets/characters/chicken/Chicken2.png" id="2_y0n2s"]
 [ext_resource type="Texture2D" uid="uid://b5t64etkb7rp0" path="res://assets/characters/chicken/Chicken3.png" id="3_tpinq"]
-[ext_resource type="PackedScene" uid="uid://cf650yyi7ufme" path="res://Level/Scenes/InteractionArea.tscn" id="5_vfvne"]
+[ext_resource type="PackedScene" uid="uid://cuqjd2nuvdw2i" path="res://Level/Scenes/InteractionArea.tscn" id="5_vfvne"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hah4p"]
 atlas = ExtResource("1_0ua02")
@@ -218,8 +218,10 @@ radius = 17.1172
 [node name="chicken" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_tocvl")
+enemyType = "Chicken"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_y3gy4")
 animation = &"0_idle"
 
