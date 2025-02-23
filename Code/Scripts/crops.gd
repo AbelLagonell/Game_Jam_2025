@@ -15,7 +15,8 @@ func _ready():
 func _process(delta):
 	check_type()
 	check_stage()
-	$AnimatedSprite2D.play(str(type) + "_" + str(stage))
+	if stage < 4:
+		$AnimatedSprite2D.play(str(type) + "_" + str(stage))
 	grow()
 
 func grow():
@@ -37,7 +38,7 @@ func check_type():
 		type = 3
 
 func _on_interact():
-	if(stage == 3 && !global.has_crop):
+	if(stage >= 3 && !global.has_crop):
 		global.has_crop = true
 		print("Got crop type " + str(type))
 		global.give_crop(type)
