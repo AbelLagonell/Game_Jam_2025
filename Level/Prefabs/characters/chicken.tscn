@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://cip6j8li4x4g2"]
+[gd_scene load_steps=30 format=3 uid="uid://cip6j8li4x4g2"]
 
 [ext_resource type="Texture2D" uid="uid://obn2k0i0vwfo" path="res://assets/characters/chicken/PixelFarm_Chicken-Sheet.png" id="1_0ua02"]
+[ext_resource type="Script" path="res://Code/Scripts/enemy.gd" id="1_tocvl"]
 [ext_resource type="Texture2D" uid="uid://wjhsh71c16nb" path="res://assets/characters/chicken/Chicken2.png" id="2_y0n2s"]
 [ext_resource type="Texture2D" uid="uid://b5t64etkb7rp0" path="res://assets/characters/chicken/Chicken3.png" id="3_tpinq"]
 
@@ -201,27 +202,55 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_01pk4"]
-radius = 4.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhoq8"]
+radius = 6.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yegf5"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ie338"]
+radius = 46.8188
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_fou8y"]
+radius = 10.0499
+
+[node name="chicken" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_tocvl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y3gy4")
-animation = &"2_ATK"
-frame_progress = 0.644775
+animation = &"0_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 10)
-shape = SubResource("CircleShape2D_01pk4")
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_qhoq8")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(0, -8)
+[node name="detection_area" type="Area2D" parent="."]
+position = Vector2(0, 2)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 17)
-shape = SubResource("CircleShape2D_yegf5")
+[node name="enemy_detection_area" type="CollisionShape2D" parent="detection_area"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_ie338")
+
+[node name="enemy_hitbox" type="Area2D" parent="."]
+position = Vector2(0, 10)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_fou8y")
+
+[node name="damage_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="wander_timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
+[connection signal="timeout" from="damage_cooldown" to="." method="_on_damage_cooldown_timeout"]
+[connection signal="timeout" from="wander_timer" to="." method="_on_wander_timer_timeout"]

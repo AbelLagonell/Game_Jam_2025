@@ -178,23 +178,27 @@ radius = 6.08276
 size = Vector2(20, 24)
 
 [node name="player" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_jhmdx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_me8mk")
 animation = &"backIdle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_3fv2t")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 10)
+zoom = Vector2(2, 2)
 
 [node name="Direction" type="Marker2D" parent="."]
 
 [node name="ActionableFinder" type="Area2D" parent="Direction"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
-position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_gsfsk")
