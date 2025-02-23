@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://cip6j8li4x4g2"]
+[gd_scene load_steps=33 format=3 uid="uid://cip6j8li4x4g2"]
 
 [ext_resource type="Texture2D" uid="uid://obn2k0i0vwfo" path="res://assets/characters/chicken/PixelFarm_Chicken-Sheet.png" id="1_0ua02"]
-[ext_resource type="Script" path="res://Code/Scripts/enemy.gd" id="1_tocvl"]
+[ext_resource type="Script" path="res://Code/Scripts/new_enemy.gd" id="1_ts627"]
 [ext_resource type="Texture2D" uid="uid://wjhsh71c16nb" path="res://assets/characters/chicken/Chicken2.png" id="2_y0n2s"]
 [ext_resource type="Texture2D" uid="uid://b5t64etkb7rp0" path="res://assets/characters/chicken/Chicken3.png" id="3_tpinq"]
+[ext_resource type="Script" path="res://Code/Scripts/enemy_hitbox_info.gd" id="5_fmoxd"]
 [ext_resource type="PackedScene" uid="uid://cuqjd2nuvdw2i" path="res://Level/Scenes/InteractionArea.tscn" id="5_vfvne"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hah4p"]
@@ -217,17 +218,19 @@ radius = 17.1172
 
 [node name="chicken" type="CharacterBody2D"]
 z_index = 1
-script = ExtResource("1_tocvl")
-enemyType = "Chicken"
+script = ExtResource("1_ts627")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_y3gy4")
-animation = &"0_idle"
+animation = &"2_ATK"
+frame = 1
+frame_progress = 0.911156
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_qhoq8")
+debug_color = Color(0.172641, 0.45068, 0, 0.42)
 
 [node name="detection_area" type="Area2D" parent="."]
 position = Vector2(0, 2)
@@ -237,22 +240,19 @@ collision_mask = 2
 [node name="enemy_detection_area" type="CollisionShape2D" parent="detection_area"]
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_ie338")
+debug_color = Color(0.944208, 0.632905, 0.856568, 0.42)
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
-position = Vector2(0, 10)
+position = Vector2(16, 8)
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("5_fmoxd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
-position = Vector2(0, -3)
+z_index = 5
+position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_fou8y")
-
-[node name="damage_cooldown" type="Timer" parent="."]
-wait_time = 0.5
-
-[node name="wander_timer" type="Timer" parent="."]
-wait_time = 10.0
-autostart = true
+debug_color = Color(0.992157, 0, 0, 0.419608)
 
 [node name="InteractionArea" parent="." instance=ExtResource("5_vfvne")]
 position = Vector2(0, 8)
@@ -260,6 +260,14 @@ action_name = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_o28te")
+debug_color = Color(0.63908, 0.525019, 0.0289893, 0.42)
+
+[node name="damage_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="wander_timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
