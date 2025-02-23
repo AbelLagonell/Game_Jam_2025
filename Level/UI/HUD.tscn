@@ -6,12 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://ofdorukjevy0" path="res://assets/characters/cow/Cow_icon.png" id="4_3i6fh"]
 [ext_resource type="Texture2D" uid="uid://bxf6kl6mqsbd3" path="res://assets/characters/sheep/Sheep_Icon.png" id="5_a0554"]
 
-[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("healthbar", "chicken_score", "cow_score", "sheep_score", "time_tracker")]
+[node name="HUD" type="Control" node_paths=PackedStringArray("healthbar", "time_tracker")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_fnojy")
 healthbar = NodePath("Health")
-chicken_score = NodePath("PanelContainer/GridContainer/ChickenScore")
-cow_score = NodePath("PanelContainer/GridContainer/CowScore")
-sheep_score = NodePath("PanelContainer/GridContainer/SheepScore")
+
 time_tracker = NodePath("Time")
 
 [node name="Time" type="Label" parent="."]
