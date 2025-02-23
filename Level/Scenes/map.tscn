@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cfr1jkqsy3i82"]
+[gd_scene load_steps=31 format=3 uid="uid://cfr1jkqsy3i82"]
 
 [ext_resource type="Texture2D" uid="uid://xp4m7rsrcdoc" path="res://assets/tileset/PixelFarm_Tileset.png" id="1_f0ubg"]
 [ext_resource type="Texture2D" uid="uid://b4nc3t1cveapm" path="res://assets/tileset/PixelFarm_Item.png" id="2_50b36"]
@@ -20,7 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://8hul1pw56r0n" path="res://assets/sfx/CowSound.mp3" id="18_nevui"]
 [ext_resource type="AudioStream" uid="uid://bebr6aegbatdr" path="res://assets/sfx/ChickenSound.mp3" id="19_a0wq7"]
 [ext_resource type="AudioStream" uid="uid://bvwm52acvx3f3" path="res://assets/sfx/SheepSound.mp3" id="19_p20ja"]
-[ext_resource type="PackedScene" uid="uid://dxndmkil8bljk" path="res://Level/UI/PauseMenu.tscn" id="16_33k3u"]
+[ext_resource type="PackedScene" path="res://Level/Prefabs/spawner.tscn" id="21_v23pt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4c7v"]
 texture = ExtResource("1_f0ubg")
@@ -549,22 +549,38 @@ color = Color(0.245738, 0.30706, 0.395977, 1)
 stream = ExtResource("16_paq4a")
 volume_db = -25.0
 autoplay = true
+bus = &"Background"
 
 [node name="TransformSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_gncsy")
 volume_db = -15.0
+bus = &"SFX"
 
 [node name="CowSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_nevui")
 volume_db = -22.0
+bus = &"SFX"
 
 [node name="SheepSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_p20ja")
 volume_db = -12.0
+bus = &"SFX"
 
 [node name="ChickenSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_a0wq7")
 volume_db = -15.0
+bus = &"SFX"
+
+[node name="Spawner" parent="." instance=ExtResource("21_v23pt")]
+position = Vector2(-294, 195)
+type = 2
+
+[node name="Spawner2" parent="." instance=ExtResource("21_v23pt")]
+position = Vector2(-256, -71)
+type = 1
+
+[node name="Spawner3" parent="." instance=ExtResource("21_v23pt")]
+position = Vector2(284, -56)
 
 [connection signal="body_shape_entered" from="PenCollision" to="PenCollision" method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="PenCollision" to="PenCollision" method="_on_body_shape_exited"]

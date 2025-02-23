@@ -46,6 +46,8 @@ func _physics_process(delta: float) -> void:
 		trigger = true;
 		global.stage += 1;
 	formatTime();
+	if (time > 90):
+		global.stop_game()
 
 
 func formatTime() -> void:
