@@ -8,25 +8,42 @@ extends Node
 @export var sheep_score: Label;
 @export var canvas: CanvasModulate;
 @export var time_tracker: Label;
-@export var duration : float = 10;
+@export var duration : int = 10;
 
 const NIGHT_COLOR := Color("#091d3a");
+const DAWN_DUSK_COLOR := Color("#F72")
 const DAY_COLOR := Color("#FFF");
 
 var time: float = 0.00;
-var reset_timer: float = 0;
-var night := false;
+var reset_timer: int = 0;
+var trigger := false;
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void: 
+	if Engine.is_editor_hint():
+		return	
+	
 	time += delta;
-	reset_timer = int(time);
-	if (canvas != null): 
-		canvas.set_color(NIGHT_COLOR.lerp(DAY_COLOR, abs(sin(time *  PI/(2 * duration)))));
-	if (reset_timer > duration*4):
-		reset_timer = 0;
-		night = false;
-	if (reset_timer == duration*1.5 and not night):
-		night = true;
+	reset_timer = int(time) % (duration*2+1);
+	if (canvas != null):
+		var normalized_time = time / float(duration * 2)
+		normalized_time = fmod(normalized_time, 1.0)
+
+		if normalized_time < 0.25:  # Night to Dawn
+			var t = smoothstep(0.0, 0.25, normalized_time)
+			canvas.set_color(NIGHT_COLOR.lerp(DAWN_DUSK_COLOR, t))
+		elif normalized_time < 0.5:  # Dawn to Day
+			var t = smoothstep(0.25, 0.5, normalized_time)
+			canvas.set_color(DAWN_DUSK_COLOR.lerp(DAY_COLOR, t))
+		elif normalized_time < 0.75:  # Day to Dusk
+			var t = smoothstep(0.5, 0.75, normalized_time)
+			canvas.set_color(DAY_COLOR.lerp(DAWN_DUSK_COLOR, t))
+		else:  # Dusk to Night
+			var t = smoothstep(0.75, 1.0, normalized_time)
+			canvas.set_color(DAWN_DUSK_COLOR.lerp(NIGHT_COLOR, t))
+	if (trigger && reset_timer < duration):
+		trigger = false;
+	if (reset_timer == duration*2 and not trigger):
+		trigger = true;
 		global.stage += 1;
 	formatTime();
 

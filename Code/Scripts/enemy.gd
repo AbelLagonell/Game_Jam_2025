@@ -4,7 +4,7 @@ class_name enemy
 #Sync
 var rng = RandomNumberGenerator.new()
 var player_chase = false
-var player = null
+var player : Node2D = null
 var enemy_in_attack_zone = false
 var can_take_damage = true
 var damage_taken = 0
@@ -15,6 +15,9 @@ var walk = false;
 @onready var interaction_area: InteractionArea = $InteractionArea
 @export var startX: int = 0
 @export var startY: int = 0
+
+@export_enum("Cow","Sheep", "Chicken") var enemyType : String = "";
+
 
 #Individual values
 var health = 50
@@ -80,16 +83,16 @@ func animate():
 	if(walk):
 		if(stage == 0):
 			$AnimatedSprite2D.play("0_walk")
-		if(stage == 2):
+		if(stage == 1):
 			$AnimatedSprite2D.play("1_walk")
-		if(stage == 4):
+		if(stage == 2):
 			$AnimatedSprite2D.play("2_walk")
 	if(!walk):
 		if(stage == 0):
 			$AnimatedSprite2D.play("0_idle")
-		if(stage == 2):
+		if(stage == 1):
 			$AnimatedSprite2D.play("1_idle")
-		if(stage == 4):
+		if(stage == 2):
 			$AnimatedSprite2D.play("2_idle")
 
 func wander():

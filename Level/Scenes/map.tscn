@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cfr1jkqsy3i82"]
+[gd_scene load_steps=25 format=3 uid="uid://cfr1jkqsy3i82"]
 
 [ext_resource type="Texture2D" uid="uid://xp4m7rsrcdoc" path="res://assets/tileset/PixelFarm_Tileset.png" id="1_f0ubg"]
 [ext_resource type="Texture2D" uid="uid://b4nc3t1cveapm" path="res://assets/tileset/PixelFarm_Item.png" id="2_50b36"]
@@ -7,13 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://dhosaskv465vq" path="res://assets/tileset/imprtileset.png" id="5_288mo"]
 [ext_resource type="PackedScene" uid="uid://b2jy0c37agr6q" path="res://Level/Prefabs/characters/player.tscn" id="5_kiwte"]
 [ext_resource type="Texture2D" uid="uid://checejc8mhdfh" path="res://assets/crops/PixelFarm_Crops.png" id="6_vgnay"]
-
 [ext_resource type="Texture2D" uid="uid://bovk3efknfx4e" path="res://assets/tileset/dirt.png" id="7_f5pad"]
-
 [ext_resource type="PackedScene" uid="uid://d3q4queuf407o" path="res://Level/Prefabs/characters/sheep.tscn" id="7_nqkvy"]
 [ext_resource type="PackedScene" uid="uid://cxjnedm6wwx7w" path="res://Level/Prefabs/characters/cow.tscn" id="8_yekpe"]
 [ext_resource type="PackedScene" uid="uid://cip6j8li4x4g2" path="res://Level/Prefabs/characters/chicken.tscn" id="9_srsdr"]
-[ext_resource type="PackedScene" uid="uid://b7haqfjc4sduv" path="res://Level/Prefabs/crops.tscn" id="10_ak6si"]
+[ext_resource type="Texture2D" uid="uid://dnjo4el3rlp4v" path="res://assets/overlay/Light.png" id="9_vn7h6"]
+[ext_resource type="PackedScene" uid="uid://x7wl355y1sl3" path="res://Level/Prefabs/crops.tscn" id="10_ak6si"]
+[ext_resource type="Script" path="res://Code/Scripts/penBehavior.gd" id="13_glclq"]
+[ext_resource type="PackedScene" uid="uid://cvhkmqh14hk06" path="res://Level/UI/HUD.tscn" id="14_aaj17"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4c7v"]
 texture = ExtResource("1_f0ubg")
@@ -395,6 +396,9 @@ sources/4 = SubResource("TileSetAtlasSource_65lea")
 sources/5 = SubResource("TileSetAtlasSource_e0cvs")
 sources/6 = SubResource("TileSetAtlasSource_isoxq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0mkh"]
+size = Vector2(126, 76.1538)
+
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 
@@ -421,6 +425,11 @@ layer_4/tile_data = PackedInt32Array(1179626, 327684, 16, 1179627, 393220, 16, 1
 layer_5/name = "Layer5"
 
 [node name="player" parent="." instance=ExtResource("5_kiwte")]
+
+[node name="PointLight2D" type="PointLight2D" parent="player"]
+position = Vector2(-8, -10)
+blend_mode = 2
+texture = ExtResource("9_vn7h6")
 
 [node name="Crops" type="Node2D" parent="."]
 
@@ -513,3 +522,22 @@ position = Vector2(131, -32)
 
 [node name="chicken" parent="." instance=ExtResource("9_srsdr")]
 position = Vector2(-140, 96)
+
+[node name="PenCollision" type="Area2D" parent="."]
+scale = Vector2(1, 1.04)
+monitorable = false
+script = ExtResource("13_glclq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PenCollision"]
+position = Vector2(240, 38.4615)
+shape = SubResource("RectangleShape2D_g0mkh")
+
+[node name="HUD" parent="." node_paths=PackedStringArray("canvas") instance=ExtResource("14_aaj17")]
+canvas = NodePath("../CanvasModulate")
+duration = 5
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.245738, 0.30706, 0.395977, 1)
+
+[connection signal="body_shape_entered" from="PenCollision" to="PenCollision" method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="PenCollision" to="PenCollision" method="_on_body_shape_exited"]

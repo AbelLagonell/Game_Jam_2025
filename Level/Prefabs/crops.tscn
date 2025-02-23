@@ -1,8 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://b7haqfjc4sduv"]
+[gd_scene load_steps=22 format=3 uid="uid://x7wl355y1sl3"]
 
 [ext_resource type="Script" path="res://Code/Scripts/crops.gd" id="1_a5g45"]
 [ext_resource type="Texture2D" uid="uid://checejc8mhdfh" path="res://assets/crops/PixelFarm_Crops.png" id="1_u4ow5"]
-[ext_resource type="PackedScene" uid="uid://cf650yyi7ufme" path="res://Level/Scenes/InteractionArea.tscn" id="3_h01kl"]
+[ext_resource type="PackedScene" uid="uid://cuqjd2nuvdw2i" path="res://Level/Scenes/InteractionArea.tscn" id="3_h01kl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wdq5d"]
 atlas = ExtResource("1_u4ow5")
