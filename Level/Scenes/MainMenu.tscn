@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://byg86ilxm640f"]
+[gd_scene load_steps=5 format=3 uid="uid://bdqhnmktckmxl"]
 
 [ext_resource type="FontFile" uid="uid://7d48m4vv8tco" path="res://Art/Font/Awe Mono Gold.ttf" id="1_h1srn"]
 [ext_resource type="PackedScene" uid="uid://b6pae8ci02d41" path="res://Level/UI/Background.tscn" id="1_jhqbw"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://brej01pysrg1h"]
+[gd_scene load_steps=3 format=3 uid="uid://cfc86nw20g0du"]
 
 [ext_resource type="FontFile" uid="uid://m1kdaxvmkci7" path="res://Art/Font/HopeGold.ttf" id="1_3d474"]
 [ext_resource type="Script" path="res://Code/Scripts/Global/InteractionManager.gd" id="1_pbyx5"]

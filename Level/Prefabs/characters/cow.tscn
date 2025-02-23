@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bmugi2rj7vf4m" path="res://assets/characters/cow/PixelFarm_Cow-Sheet.png" id="1_wtr5h"]
 [ext_resource type="Texture2D" uid="uid://de85ukthwrdgh" path="res://assets/characters/cow/Cow.png" id="2_ew7ox"]
 [ext_resource type="Texture2D" uid="uid://cc8juvhexd60s" path="res://assets/characters/cow/CowAtk.png" id="3_enb41"]
-[ext_resource type="PackedScene" uid="uid://cf650yyi7ufme" path="res://Level/Scenes/InteractionArea.tscn" id="5_prm0h"]
+[ext_resource type="PackedScene" uid="uid://cuqjd2nuvdw2i" path="res://Level/Scenes/InteractionArea.tscn" id="5_prm0h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13sfi"]
 atlas = ExtResource("1_wtr5h")
@@ -182,12 +182,12 @@ radius = 27.0185
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_njk6n")
-metadata/cow = true
+enemyType = "Cow"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_ng8lm")
-animation = &"0_idle"
+animation = &"1_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
