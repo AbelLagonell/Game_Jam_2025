@@ -177,7 +177,7 @@ radius = 6.08276
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsfsk"]
 size = Vector2(20, 24)
 
-[node name="player" type="CharacterBody2D" groups=["Player"]]
+[node name="player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
 collision_layer = 3
