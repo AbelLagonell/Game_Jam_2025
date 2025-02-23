@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name enemy
 
 #Sync
 var rng = RandomNumberGenerator.new()
@@ -11,6 +12,7 @@ var is_being_held = false
 var start_position = global_position
 var target_position = global_position
 var walk = false;
+@onready var interaction_area: InteractionArea = $InteractionArea
 
 #Individual values
 var health = 50
@@ -20,6 +22,7 @@ var stage = 0
 
 func _ready():
 	updateTargetPos()
+	interaction_area.interact = Callable(self, "_on_interact")
 
 func _physics_process(delta):
 	updateForm()
@@ -90,6 +93,9 @@ func wander():
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
+
+func _on_interact():
+	print("Interacted With")
 
 func _on_wander_timer_timeout():
 	updateTargetPos()

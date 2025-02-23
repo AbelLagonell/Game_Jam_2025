@@ -23,6 +23,7 @@ buses/default_bus_layout="res://Art/Audio/bus_layout.tres"
 
 global="*res://Code/Scripts/Global/global.gd"
 SceneManager="*res://Level/Scenes/SceneManager.tscn"
+InteractionManager="*res://Level/Scenes/InteractionManager.tscn"
 
 [display]
 
@@ -34,6 +35,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="Game Jam 2025"
+
+[global_group]
+
+Player=""
 
 [gui]
 

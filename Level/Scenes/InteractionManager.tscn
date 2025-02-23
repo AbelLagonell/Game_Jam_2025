@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://brej01pysrg1h"]
+
+[ext_resource type="FontFile" uid="uid://m1kdaxvmkci7" path="res://Art/Font/HopeGold.ttf" id="1_3d474"]
+[ext_resource type="Script" path="res://Code/Scripts/Global/InteractionManager.gd" id="1_pbyx5"]
+
+[node name="InteractionManager" type="Node2D"]
+z_index = 20
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_pbyx5")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 38.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_3d474")
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
