@@ -24,6 +24,7 @@ buses/default_bus_layout="res://Art/Audio/bus_layout.tres"
 global="*res://Code/Scripts/Global/global.gd"
 SceneManager="*res://Level/Scenes/SceneManager.tscn"
 InteractionManager="*res://Level/Scenes/InteractionManager.tscn"
+CropChild="*res://Level/Prefabs/cropChild.tscn"
 
 [display]
 

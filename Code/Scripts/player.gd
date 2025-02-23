@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var enemyType = "None"
 const speed = 200
 var current_dir = "none"
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
