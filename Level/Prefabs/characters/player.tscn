@@ -194,7 +194,7 @@ shape = SubResource("CircleShape2D_3fv2t")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 10)
-zoom = Vector2(2, 2)
+zoom = Vector2(4, 4)
 
 [node name="Direction" type="Marker2D" parent="."]
 
