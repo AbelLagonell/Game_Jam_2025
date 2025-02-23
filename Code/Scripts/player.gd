@@ -18,7 +18,12 @@ func _ready():
 func _physics_process(delta):
 	if !global.diaActive:
 		player_movement(delta)
-
+		pausing()
+		
+func pausing():
+	if Input.is_action_just_pressed("Pause"):
+		SceneManager.toggle_pause();
+	
 func player_movement(delta):
 	if Input.is_action_pressed("ui_right"):
 		current_dir = "right"

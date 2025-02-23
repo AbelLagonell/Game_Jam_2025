@@ -4,6 +4,8 @@ class_name NSceneManager
 
 @export var Scenes : Dictionary= {};
 
+signal paused()
+
 var m_CurrentSenceAlias : String = "";
 
 func get_scenes() -> Array:
@@ -23,3 +25,7 @@ func restart_scene() -> void:
 
 func quit_game() -> void:
 	get_tree().quit()
+	
+func toggle_pause() -> void:
+	paused.emit();
+	get_tree().paused = !get_tree().paused

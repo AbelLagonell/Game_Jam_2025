@@ -1,4 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://cfr1jkqsy3i82"]
+
+[gd_scene load_steps=26 format=3 uid="uid://cfr1jkqsy3i82"]
+
 
 [ext_resource type="Texture2D" uid="uid://xp4m7rsrcdoc" path="res://assets/tileset/PixelFarm_Tileset.png" id="1_f0ubg"]
 [ext_resource type="Texture2D" uid="uid://b4nc3t1cveapm" path="res://assets/tileset/PixelFarm_Item.png" id="2_50b36"]
@@ -7,10 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://dhosaskv465vq" path="res://assets/tileset/imprtileset.png" id="5_288mo"]
 [ext_resource type="PackedScene" uid="uid://b2jy0c37agr6q" path="res://Level/Prefabs/characters/player.tscn" id="5_kiwte"]
 [ext_resource type="Texture2D" uid="uid://checejc8mhdfh" path="res://assets/crops/PixelFarm_Crops.png" id="6_vgnay"]
-[ext_resource type="Texture2D" uid="uid://b0007wcr44adg" path="res://assets/tileset/dirt.png" id="7_f5pad"]
+
+[ext_resource type="Texture2D" uid="uid://bovk3efknfx4e" path="res://assets/tileset/dirt.png" id="7_f5pad"]
 [ext_resource type="PackedScene" uid="uid://d3q4queuf407o" path="res://Level/Prefabs/characters/sheep.tscn" id="7_nqkvy"]
 [ext_resource type="PackedScene" uid="uid://cxjnedm6wwx7w" path="res://Level/Prefabs/characters/cow.tscn" id="8_yekpe"]
 [ext_resource type="PackedScene" uid="uid://cip6j8li4x4g2" path="res://Level/Prefabs/characters/chicken.tscn" id="9_srsdr"]
+[ext_resource type="Texture2D" uid="uid://dnjo4el3rlp4v" path="res://assets/overlay/Light.png" id="9_vn7h6"]
+[ext_resource type="PackedScene" uid="uid://x7wl355y1sl3" path="res://Level/Prefabs/crops.tscn" id="10_ak6si"]
+[ext_resource type="Script" path="res://Code/Scripts/penBehavior.gd" id="13_glclq"]
+[ext_resource type="PackedScene" uid="uid://cvhkmqh14hk06" path="res://Level/UI/HUD.tscn" id="14_aaj17"]
+[ext_resource type="PackedScene" uid="uid://dxndmkil8bljk" path="res://Level/UI/PauseMenu.tscn" id="16_33k3u"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4c7v"]
 texture = ExtResource("1_f0ubg")
@@ -392,6 +401,9 @@ sources/4 = SubResource("TileSetAtlasSource_65lea")
 sources/5 = SubResource("TileSetAtlasSource_e0cvs")
 sources/6 = SubResource("TileSetAtlasSource_isoxq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0mkh"]
+size = Vector2(126, 76.1538)
+
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 
@@ -419,8 +431,36 @@ layer_5/name = "Layer5"
 
 [node name="player" parent="." instance=ExtResource("5_kiwte")]
 
-[node name="Sheep1" type="Marker2D" parent="."]
-position = Vector2(-68, -136)
+[node name="PointLight2D" type="PointLight2D" parent="player"]
+position = Vector2(-8, -10)
+blend_mode = 2
+texture = ExtResource("9_vn7h6")
+
+[node name="Crops" type="Node2D" parent="."]
+
+[node name="Crop" parent="Crops" instance=ExtResource("10_ak6si")]
+position = Vector2(-87, -96)
+stage = 3
+
+[node name="Crop2" parent="Crops" instance=ExtResource("10_ak6si")]
+position = Vector2(-119, -97)
+stage = 2
+
+[node name="Crop3" parent="Crops" instance=ExtResource("10_ak6si")]
+position = Vector2(-151, -96)
+stage = 1
+
+[node name="Crop4" parent="Crops" instance=ExtResource("10_ak6si")]
+position = Vector2(-182, -95)
+
+[node name="Crop5" parent="Crops" instance=ExtResource("10_ak6si")]
+position = Vector2(-183, -74)
+type = 1
+
+[node name="Crop6" parent="Crops" instance=ExtResource("10_ak6si")]
+position = Vector2(-153, -74)
+type = 1
+stage = 1
 
 [node name="sheep" parent="Sheep1" instance=ExtResource("7_nqkvy")]
 position = Vector2(8, 266)
@@ -442,3 +482,37 @@ position = Vector2(-66, 218)
 position = Vector2(-19.778, 0)
 scale = Vector2(0.957237, 1)
 polygon = PackedVector2Array(564.936, -193, 575.383, 385, -446.308, 385, -456.754, -380, 583.741, -388, 561.802, -219, 447.933, -117, 429.129, -116, 431.218, -278, -343.93, -279, -339.751, 282, 436.442, 281, 429.129, -110, 471.96, -110)
+
+[node name="sheep" parent="." instance=ExtResource("7_nqkvy")]
+position = Vector2(100, 100)
+startX = 100
+startY = 100
+
+[node name="cow" parent="." instance=ExtResource("8_yekpe")]
+position = Vector2(131, -32)
+
+[node name="chicken" parent="." instance=ExtResource("9_srsdr")]
+position = Vector2(-140, 96)
+
+[node name="PenCollision" type="Area2D" parent="."]
+scale = Vector2(1, 1.04)
+monitorable = false
+script = ExtResource("13_glclq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PenCollision"]
+position = Vector2(240, 38.4615)
+shape = SubResource("RectangleShape2D_g0mkh")
+
+[node name="HUD" parent="." node_paths=PackedStringArray("canvas") instance=ExtResource("14_aaj17")]
+canvas = NodePath("../CanvasModulate")
+duration = 5
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.245738, 0.30706, 0.395977, 1)
+
+[node name="PauseMenu" parent="." instance=ExtResource("16_33k3u")]
+process_mode = 2
+visible = false
+
+[connection signal="body_shape_entered" from="PenCollision" to="PenCollision" method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="PenCollision" to="PenCollision" method="_on_body_shape_exited"]
