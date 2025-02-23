@@ -8,7 +8,7 @@ var stage := 0; #Go up as timer alters/player progresses through days: 0, 1, 2.
 
 #Stat Tracking
 var _total_score: int 	= 0;
-var chicken_inside: int= 0;
+var chicken_inside: int = 0;
 var sheep_inside: int 	= 0;
 var cow_inside: int 	= 0;
 var current_health: int	= 10;
@@ -20,6 +20,16 @@ signal max_health_change(health:int);
 signal cow_change(score:int);
 signal chicken_change(score:int);
 signal sheep_change(score:int);
+
+func get_score()->int:
+	var count := 0;
+	if (cow_inside > 0):
+		count+=1;
+	if (chicken_inside > 0):
+		count+=1;
+	if (sheep_inside > 0):
+		count+=1;
+	return _total_score + (count-1)*5	
 
 func modify_score(score: int):
 	_total_score += score;
@@ -36,14 +46,17 @@ func set_max_health(health:int):
 func modify_cow(amount: int):
 	cow_inside += amount;
 	cow_change.emit(cow_inside);
+	modify_score(1);
 
 func modify_chicken(amount: int):
 	chicken_inside += amount;
 	chicken_change.emit(cow_inside);
+	modify_score(1);
 
 func modify_sheep(amount: int):
 	sheep_inside += amount;
 	sheep_change.emit(cow_inside);
+	modify_score(1);
 	
 func _ready() -> void:
 	max_health_change.emit(max_health);

@@ -1,17 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvhkmqh14hk06"]
+[gd_scene load_steps=5 format=3 uid="uid://cvhkmqh14hk06"]
 
 [ext_resource type="Script" path="res://Code/Scripts/UI/update_hud.gd" id="1_fnojy"]
-[ext_resource type="Script" path="res://Code/Scripts/UI/timeTracker.gd" id="1_h3tam"]
 [ext_resource type="Texture2D" uid="uid://dvxssvd78pffq" path="res://assets/characters/chicken/chicken_icon.png" id="3_4plsk"]
 [ext_resource type="Texture2D" uid="uid://ofdorukjevy0" path="res://assets/characters/cow/Cow_icon.png" id="4_3i6fh"]
 [ext_resource type="Texture2D" uid="uid://bxf6kl6mqsbd3" path="res://assets/characters/sheep/Sheep_Icon.png" id="5_a0554"]
 
-[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("healthbar", "chicken_score", "cow_score", "sheep_score")]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("healthbar", "chicken_score", "cow_score", "sheep_score", "time_tracker")]
 script = ExtResource("1_fnojy")
 healthbar = NodePath("Health")
 chicken_score = NodePath("PanelContainer/GridContainer/ChickenScore")
 cow_score = NodePath("PanelContainer/GridContainer/CowScore")
 sheep_score = NodePath("PanelContainer/GridContainer/SheepScore")
+TIME_SCALE = 0.1
+time_tracker = NodePath("Time")
 
 [node name="Time" type="Label" parent="."]
 custom_minimum_size = Vector2(120, 40)
@@ -27,7 +28,6 @@ theme_type_variation = &"TimerLabel"
 text = "58.21"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_h3tam")
 
 [node name="Health" type="ProgressBar" parent="."]
 offset_left = 20.0

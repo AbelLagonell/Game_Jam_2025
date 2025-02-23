@@ -207,6 +207,7 @@ radius = 12.0
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_rahjh")
+metadata/sheep = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_f2mt7")
