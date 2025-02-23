@@ -1,6 +1,4 @@
-
 [gd_scene load_steps=26 format=3 uid="uid://cfr1jkqsy3i82"]
-
 
 [ext_resource type="Texture2D" uid="uid://xp4m7rsrcdoc" path="res://assets/tileset/PixelFarm_Tileset.png" id="1_f0ubg"]
 [ext_resource type="Texture2D" uid="uid://b4nc3t1cveapm" path="res://assets/tileset/PixelFarm_Item.png" id="2_50b36"]
@@ -9,8 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dhosaskv465vq" path="res://assets/tileset/imprtileset.png" id="5_288mo"]
 [ext_resource type="PackedScene" uid="uid://b2jy0c37agr6q" path="res://Level/Prefabs/characters/player.tscn" id="5_kiwte"]
 [ext_resource type="Texture2D" uid="uid://checejc8mhdfh" path="res://assets/crops/PixelFarm_Crops.png" id="6_vgnay"]
-
-[ext_resource type="Texture2D" uid="uid://bovk3efknfx4e" path="res://assets/tileset/dirt.png" id="7_f5pad"]
+[ext_resource type="Texture2D" uid="uid://b0007wcr44adg" path="res://assets/tileset/dirt.png" id="7_f5pad"]
 [ext_resource type="PackedScene" uid="uid://d3q4queuf407o" path="res://Level/Prefabs/characters/sheep.tscn" id="7_nqkvy"]
 [ext_resource type="PackedScene" uid="uid://cxjnedm6wwx7w" path="res://Level/Prefabs/characters/cow.tscn" id="8_yekpe"]
 [ext_resource type="PackedScene" uid="uid://cip6j8li4x4g2" path="res://Level/Prefabs/characters/chicken.tscn" id="9_srsdr"]
@@ -18,8 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://x7wl355y1sl3" path="res://Level/Prefabs/crops.tscn" id="10_ak6si"]
 [ext_resource type="Script" path="res://Code/Scripts/penBehavior.gd" id="13_glclq"]
 [ext_resource type="PackedScene" uid="uid://cvhkmqh14hk06" path="res://Level/UI/HUD.tscn" id="14_aaj17"]
-[ext_resource type="PackedScene" uid="uid://dxndmkil8bljk" path="res://Level/UI/PauseMenu.tscn" id="16_33k3u"]
-
+[ext_resource type="PackedScene" path="res://Level/UI/PauseMenu.tscn" id="16_33k3u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4c7v"]
 texture = ExtResource("1_f0ubg")
@@ -462,8 +458,8 @@ position = Vector2(-153, -74)
 type = 1
 stage = 1
 
-[node name="sheep" parent="Sheep1" instance=ExtResource("7_nqkvy")]
-position = Vector2(8, 266)
+[node name="Sheep1#sheep" parent="." instance=ExtResource("7_nqkvy")]
+position = Vector2(3, 167)
 
 [node name="Chicken1" type="Marker2D" parent="."]
 position = Vector2(-217, 146)
@@ -489,7 +485,7 @@ startX = 100
 startY = 100
 
 [node name="cow" parent="." instance=ExtResource("8_yekpe")]
-position = Vector2(131, -32)
+position = Vector2(154, -44)
 
 [node name="chicken" parent="." instance=ExtResource("9_srsdr")]
 position = Vector2(-140, 96)

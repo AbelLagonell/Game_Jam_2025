@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Code/Scripts/UI/update_hud.gd" id="1_fnojy"]
 [ext_resource type="Script" path="res://Code/Scripts/UI/timeTracker.gd" id="1_h3tam"]
 
-[node name="HUD" type="Control" node_paths=PackedStringArray("healthbar")]
+[node name="HUD" type="Control" node_paths=PackedStringArray("healthbar", "time_tracker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fnojy")
 healthbar = NodePath("Health")
+time_tracker = NodePath("Time")
 
 [node name="Time" type="Label" parent="."]
 custom_minimum_size = Vector2(120, 40)
