@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://8hul1pw56r0n" path="res://assets/sfx/CowSound.mp3" id="18_nevui"]
 [ext_resource type="AudioStream" uid="uid://bebr6aegbatdr" path="res://assets/sfx/ChickenSound.mp3" id="19_a0wq7"]
 [ext_resource type="AudioStream" uid="uid://bvwm52acvx3f3" path="res://assets/sfx/SheepSound.mp3" id="19_p20ja"]
+[ext_resource type="PackedScene" uid="uid://dxndmkil8bljk" path="res://Level/UI/PauseMenu.tscn" id="16_33k3u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4c7v"]
 texture = ExtResource("1_f0ubg")
