@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bidd0mr2i47xk"]
+[gd_scene load_steps=5 format=3 uid="uid://bidd0mr2i47xk"]
 
 [ext_resource type="FontFile" uid="uid://7d48m4vv8tco" path="res://Art/Font/Awe Mono Gold.ttf" id="1_nd78a"]
+[ext_resource type="PackedScene" uid="uid://b6pae8ci02d41" path="res://Level/UI/Background.tscn" id="1_wlrrg"]
 [ext_resource type="Texture2D" uid="uid://wtabs8qxyaw6" path="res://Art/Theme/Panel/Divider.png" id="2_sguav"]
 [ext_resource type="Script" path="res://Code/Scripts/UI/changeScene.gd" id="3_w4mvt"]
 
@@ -11,6 +12,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" parent="." instance=ExtResource("1_wlrrg")]
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
