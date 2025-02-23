@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://bovk3efknfx4e"
-
-path="res://.godot/imported/dirt.png-a6ffe435787fdd294b3e95d3a279f7b5.ctex"
+uid="uid://ofdorukjevy0"
+path="res://.godot/imported/Cow_icon.png-ec46f60d49fc1dd9288ea13e0fab8f44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/dirt.png"
-dest_files=["res://.godot/imported/dirt.png-a6ffe435787fdd294b3e95d3a279f7b5.ctex"]
+source_file="res://assets/characters/cow/Cow_icon.png"
+dest_files=["res://.godot/imported/Cow_icon.png-ec46f60d49fc1dd9288ea13e0fab8f44.ctex"]
 
 [params]
 

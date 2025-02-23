@@ -218,6 +218,7 @@ radius = 17.1172
 [node name="chicken" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_tocvl")
+metadata/chicken = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y3gy4")

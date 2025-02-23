@@ -182,6 +182,7 @@ radius = 27.0185
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_njk6n")
+metadata/cow = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1

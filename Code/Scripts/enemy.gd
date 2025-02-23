@@ -80,16 +80,16 @@ func animate():
 	if(walk):
 		if(stage == 0):
 			$AnimatedSprite2D.play("0_walk")
-		if(stage == 1):
-			$AnimatedSprite2D.play("1_walk")
 		if(stage == 2):
+			$AnimatedSprite2D.play("1_walk")
+		if(stage == 4):
 			$AnimatedSprite2D.play("2_walk")
 	if(!walk):
 		if(stage == 0):
 			$AnimatedSprite2D.play("0_idle")
-		if(stage == 1):
-			$AnimatedSprite2D.play("1_idle")
 		if(stage == 2):
+			$AnimatedSprite2D.play("1_idle")
+		if(stage == 4):
 			$AnimatedSprite2D.play("2_idle")
 
 func wander():

@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://bovk3efknfx4e"
-
-path="res://.godot/imported/dirt.png-a6ffe435787fdd294b3e95d3a279f7b5.ctex"
+uid="uid://bxf6kl6mqsbd3"
+path="res://.godot/imported/Sheep_Icon.png-96b9f12a2f69909b4cf87d3eadf7136b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/dirt.png"
-dest_files=["res://.godot/imported/dirt.png-a6ffe435787fdd294b3e95d3a279f7b5.ctex"]
+source_file="res://assets/characters/sheep/Sheep_Icon.png"
+dest_files=["res://.godot/imported/Sheep_Icon.png-96b9f12a2f69909b4cf87d3eadf7136b.ctex"]
 
 [params]
 
