@@ -177,6 +177,7 @@ radius = 12.0
 [node name="cow" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_njk6n")
+metadata/cow = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
