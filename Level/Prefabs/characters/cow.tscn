@@ -179,8 +179,7 @@ script = ExtResource("1_njk6n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ng8lm")
-animation = &"2_atk"
-frame_progress = 0.233192
+animation = &"0_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)

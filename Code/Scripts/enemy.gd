@@ -8,8 +8,8 @@ var enemy_in_attack_zone = false
 var can_take_damage = true
 var damage_taken = 0
 var is_being_held = false
-var start_position = Vector2(10, 10)
-var target_position = Vector2(10, 10)
+var start_position = global_position
+var target_position = global_position
 var walk = false;
 
 #Individual values
@@ -19,10 +19,9 @@ var speed = 50
 var stage = 0
 
 func _ready():
-	#start_position = Vector2(10, 10)
-	#target_position = Vector2(global_position.x, global_position.y)
+	start_position = global_position
+	target_position = global_position
 	updateTargetPos()
-	print(global_position.x, global_position.y)
 
 func _physics_process(delta):
 	updateForm()
