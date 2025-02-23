@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bmugi2rj7vf4m" path="res://assets/characters/cow/PixelFarm_Cow-Sheet.png" id="1_wtr5h"]
 [ext_resource type="Texture2D" uid="uid://de85ukthwrdgh" path="res://assets/characters/cow/Cow.png" id="2_ew7ox"]
 
-[ext_resource type="Texture2D" path="res://assets/characters/cow/Cow2.png" id="3_6bdsk"]
+[ext_resource type="Texture2D" uid="uid://bfitro23fbhkj" path="res://assets/characters/cow/Cow2.png" id="3_6bdsk"]
+
 [ext_resource type="Texture2D" uid="uid://cc8juvhexd60s" path="res://assets/characters/cow/CowAtk.png" id="3_enb41"]
 [ext_resource type="PackedScene" path="res://Level/Scenes/InteractionArea.tscn" id="5_prm0h"]
 

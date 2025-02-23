@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://br400irw134cy"]
+
+[ext_resource type="Texture2D" uid="uid://da3wqoh5numer" path="res://assets/crops/1.png" id="1_3aei3"]
+[ext_resource type="Script" path="res://Code/Scripts/holdCrop.gd" id="1_mcmwu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u50ob"]
+size = Vector2(12, 10)
+
+[node name="Crop" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_mcmwu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u50ob")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3aei3")

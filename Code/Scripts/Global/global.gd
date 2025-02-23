@@ -5,7 +5,6 @@ var diaActive: bool = false;
 
 #progession
 var stage :int = 0; #Go up as timer alters/player progresses through days: 0, 1, 2.
-var has_crop: bool = false;
 
 #Stat Tracking
 var _total_score: int 	= 0;
@@ -68,6 +67,12 @@ func modify_sheep(amount: int):
 	sheep_change.emit(sheep_inside);
 	
 
+#crop management
+var has_crop: bool = false;
+var crop_type = 0
+func give_crop(type):
+	crop_type = type
+	has_crop = true
 
 func reset():
 	_total_score = 0;
