@@ -212,12 +212,12 @@ radius = 46.8188
 radius = 10.0499
 
 [node name="chicken" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_tocvl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y3gy4")
-animation = &"2_ATK"
-frame_progress = 0.644775
+animation = &"0_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)

@@ -9,5 +9,3 @@ func _ready() -> void:
 	
 func _on_value_changed(new_value:float):
 	AudioServer.set_bus_volume_db(_bus, linear_to_db(new_value));
-
-
