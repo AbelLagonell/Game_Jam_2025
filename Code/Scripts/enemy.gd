@@ -1,29 +1,34 @@
 extends CharacterBody2D
 
 #Sync
+var rng = RandomNumberGenerator.new()
 var player_chase = false
 var player = null
 var enemy_in_attack_zone = false
 var can_take_damage = true
 var damage_taken = 0
 var is_being_held = false
-var start_position = global_position
-var target_position = global_position
+var start_position = Vector2(10, 10)
+var target_position = Vector2(10, 10)
+var walk = false;
 
 #Individual values
 var health = 50
 var atk = 5
 var speed = 50
-var stage = 2
+var stage = 0
 
-func start():
-	start_position = global_position
-	target_position = global_position
+func _ready():
+	#start_position = Vector2(10, 10)
+	#target_position = Vector2(global_position.x, global_position.y)
+	updateTargetPos()
+	print(global_position.x, global_position.y)
 
 func _physics_process(delta):
 	updateForm()
 	
 	if(!is_being_held):
+		animate()
 		if(stage == 2):
 			#damage()
 			if player_chase:
@@ -41,7 +46,7 @@ func _physics_process(delta):
 
 func updateForm():
 	if(stage != global.stage):
-		#stage = global.stage
+		stage = global.stage
 		pass
 
 func enemy():
@@ -58,30 +63,36 @@ func damage():
 				self.queue_free()
 
 func updateTargetPos():
-	var targetVec = Vector2(randf_range(-32,32),randf_range(-32,32))
+	rng.randomize()
+	var targetVec = Vector2(rng.randf_range(-32,32), rng.randf_range(-32,32))
 	target_position = start_position + targetVec
 
-func wander():
-	if(position != target_position):
-		position += (target_position - position)/speed
+func animate():
+	if(walk):
 		if(stage == 0):
 			$AnimatedSprite2D.play("0_walk")
 		if(stage == 1):
 			$AnimatedSprite2D.play("1_walk")
-		if (stage == 2):
+		if(stage == 2):
 			$AnimatedSprite2D.play("2_walk")
-			
-		if(target_position - position) < Vector2(0,0):
-			$AnimatedSprite2D.flip_h = true
-		else:
-			$AnimatedSprite2D.flip_h = false
-	else:
+	if(!walk):
 		if(stage == 0):
 			$AnimatedSprite2D.play("0_idle")
 		if(stage == 1):
 			$AnimatedSprite2D.play("1_idle")
-		if (stage == 2):
+		if(stage == 2):
 			$AnimatedSprite2D.play("2_idle")
+
+func wander():
+	if(int(position.x) == int(target_position.x) && int(position.y) == int(target_position.y)):
+		walk = false;
+	else:
+		position += (target_position - position)/speed
+		walk = true;
+		if(target_position - position) < Vector2(0,0):
+			$AnimatedSprite2D.flip_h = true
+		else:
+			$AnimatedSprite2D.flip_h = false
 
 func _on_wander_timer_timeout():
 	updateTargetPos()

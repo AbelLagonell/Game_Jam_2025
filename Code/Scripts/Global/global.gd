@@ -61,5 +61,4 @@ func reset():
 	current_health = max_health;
 	modify_health(current_health);
 	stage = 0;
-	
 

@@ -1,4 +1,3 @@
-
 [gd_scene load_steps=31 format=3 uid="uid://d3q4queuf407o"]
 
 [ext_resource type="Script" path="res://Code/Scripts/enemy.gd" id="1_rahjh"]
@@ -196,7 +195,6 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_01pk4"]
-
 radius = 8.06226
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yegf5"]
@@ -205,21 +203,20 @@ radius = 46.8188
 [sub_resource type="CircleShape2D" id="CircleShape2D_1st3q"]
 radius = 12.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="sheep" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_rahjh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_f2mt7")
-animation = &"2_walk"
-frame_progress = 0.326381
+animation = &"0_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_01pk4")
 
 [node name="detection_area" type="Area2D" parent="."]
-
 position = Vector2(0, -8)
 collision_layer = 2
 collision_mask = 2
@@ -229,6 +226,8 @@ position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_yegf5")
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
 position = Vector2(0, -3)
@@ -238,7 +237,7 @@ shape = SubResource("CircleShape2D_1st3q")
 wait_time = 0.5
 
 [node name="wander_timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 autostart = true
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
