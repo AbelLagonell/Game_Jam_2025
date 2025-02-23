@@ -19,8 +19,6 @@ var speed = 50
 var stage = 0
 
 func _ready():
-	start_position = global_position
-	target_position = global_position
 	updateTargetPos()
 
 func _physics_process(delta):

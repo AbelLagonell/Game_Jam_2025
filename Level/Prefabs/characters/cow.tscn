@@ -175,9 +175,11 @@ radius = 46.8188
 radius = 12.0
 
 [node name="cow" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_njk6n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_ng8lm")
 animation = &"0_idle"
 
