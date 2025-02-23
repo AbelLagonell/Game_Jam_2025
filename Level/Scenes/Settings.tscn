@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dg0yraygt4nu8"]
+[gd_scene load_steps=4 format=3 uid="uid://dg0yraygt4nu8"]
 
 [ext_resource type="Script" path="res://Code/Scripts/UI/changeScene.gd" id="1_5tmkm"]
+[ext_resource type="PackedScene" uid="uid://b6pae8ci02d41" path="res://Level/UI/Background.tscn" id="1_hjbqx"]
 [ext_resource type="Script" path="res://Code/Scripts/UI/soundChange.gd" id="2_itk3c"]
 
 [node name="Settings" type="Control"]
@@ -10,6 +11,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" parent="." instance=ExtResource("1_hjbqx")]
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
